@@ -110,7 +110,7 @@ function TechStack() {
 					<TextSection title='Everything Else'>
 						I also work with a variety of other tools and techniques
 						from writing <b>CLIs</b> to <b>programming languages</b> and
-						<b>distributed storage systems</b>.
+						<b> distributed storage systems</b>.
 					</TextSection>
 					<RotatingWheel path='other.svg' />
 				</div>

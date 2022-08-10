@@ -168,7 +168,7 @@ const UrlShortenerCard = () => {
         an <b>SQLite3</b> database to store mappings and allows users to request
         specific URLs. Docker is used to allow for easy hosting between devices.
       </>}
-      icons={["go.svg", "sqlite.svg", "docker.svg"]}
+      icons={["go.svg", "sqlite.svg", "docker.svg", ""]}
     />
   )
 }
