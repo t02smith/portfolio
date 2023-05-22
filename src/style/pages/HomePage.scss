@@ -1,0 +1,79 @@
+@use "../util/index" as *;
+
+.home-page {
+  overflow: hidden;
+
+  >.quick-links {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 5px;
+  overflow: hidden;
+  padding-bottom: 3rem;
+
+  &:hover {
+    text-decoration: none;
+
+    >h2 {
+      color: black;
+      background-color: white;
+      border-radius: 15px;
+      transition: border-radius 300ms linear;
+    }
+
+  }
+
+
+  >*:first-child {
+    color: rgb(0, 174, 255);
+    font-size: 6rem;
+  }
+
+  >h2 {
+    color: white;
+    background-color: #131313;
+
+    padding: 3px 14px;
+  }
+
+  >img {
+    width: 200px;
+    height: 150px;
+
+  }
+}
+
+@media (max-width: 500px) {
+  .quick-link {
+    gap: 0;
+    padding-bottom: 10rem;
+
+    >h2 {
+      font-size: 1.4rem;
+    }
+
+    >img {
+      width: 100px;
+      height: 75px;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .quick-links {
+    gap: 1rem;
+    top: 35rem;
+  }
+}
