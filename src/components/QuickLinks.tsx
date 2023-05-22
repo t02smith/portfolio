@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom"
 
-
-
 export type QuickLinkParams = {
   name: string
   link: string

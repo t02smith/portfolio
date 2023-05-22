@@ -23,7 +23,7 @@ const projects: Array<Project> = [
   },
   {
     name: "Untitled Chore App",
-    logo_file: "/projects/uca/logo.svg",
+    logo_file: "/projects/uca/logo.png",
     description_file: "/projects/uca/uca.md"
   }
 ]
@@ -35,6 +35,8 @@ const Projects = () => {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   const [mdContent, setMdContent] = useState<string | null>(null);
+
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   async function loadMarkdownFile(path: string) {
     const response = await fetch(path);
@@ -53,6 +55,7 @@ const Projects = () => {
   useEffect(() => {
     if (!activeProject) return;
 
+    setSidebarOpen(false)
     navigate(`?project=${activeProject.name.replaceAll(" ", "+")}`, { replace: true })
     loadMarkdownFile(activeProject.description_file)
   }, [activeProject, navigate])
@@ -63,11 +66,12 @@ const Projects = () => {
     <Page className="projects">
       <header>
         <Link to="/">Tom Smith</Link>
+        <img onClick={() => setSidebarOpen(!sidebarOpen)} src="/svg/icons/burger.svg" className={`${sidebarOpen && "open"}`} alt="" />
         <h2>🛠️ My Projects</h2>
       </header>
 
       <div className="project-table">
-        <ul>
+        <ul className={`${sidebarOpen && "open"}`}>
           {projects.map((p, i) => (
             <li key={i} onClick={() => setActiveProject(p)}> <img src={`${p.logo_file}`} alt="" /> {p.name}</li>
           ))}
@@ -82,7 +86,7 @@ const Projects = () => {
         </div>
       </div>
 
-
+      <div className={`overlay ${sidebarOpen && "show"}`} onClick={() => setSidebarOpen(false)}></div>
 
     </Page>
   )
