@@ -1,19 +1,15 @@
 @use "../util/index" as *;
 
 .home-page {
-
-  >.title-wrapper {
-    padding-top: 5rem;
-  }
+  overflow: hidden;
 
   >.quick-links {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-
-    position: absolute;
-
-    width: 100vw;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
   }
 }
 
@@ -24,6 +20,8 @@
   justify-content: center;
   text-decoration: none;
   gap: 5px;
+  overflow: hidden;
+  padding-bottom: 3rem;
 
   &:hover {
     text-decoration: none;
@@ -58,13 +56,9 @@
 }
 
 @media (max-width: 500px) {
-  .quick-links {
-    top: 25rem;
-    gap: 0;
-  }
-
   .quick-link {
     gap: 0;
+    padding-bottom: 10rem;
 
     >h2 {
       font-size: 1.4rem;
