@@ -1,20 +1,11 @@
 import React from 'react';
-import './style/css/App.css';
-import TomSmith from './components/TomSmith';
-import TechStack from './components/TechStack';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
- 
+import '@/style/App.scss';
+import { RouterProvider } from "react-router-dom"
+import router from "@/router"
+
+
 function App() {
-  return (
-    <>
-      <TomSmith />
-      <TechStack />
-      <Projects/>
-      <Contact />
-    </>
-    
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
