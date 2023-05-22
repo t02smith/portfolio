@@ -45,7 +45,7 @@ const Projects = () => {
   }
 
   useEffect(() => {
-    if (!searchParams.has("project")) return;
+    if (!searchParams.has("project")) setActiveProject(projects[0]);
 
     const project = searchParams.get("project")?.replaceAll("+", " ").toLowerCase();
     const foundProject = projects.find((p) => p.name.toLowerCase() === project);
@@ -64,11 +64,11 @@ const Projects = () => {
 
   return (
     <Page className="projects">
-      <header>
+      <div className="header">
         <Link to="/">Tom Smith</Link>
         <img onClick={() => setSidebarOpen(!sidebarOpen)} src="/svg/icons/burger.svg" className={`${sidebarOpen && "open"}`} alt="" />
         <h2>🛠️ My Projects</h2>
-      </header>
+      </div>
 
       <div className="project-table">
         <ul className={`${sidebarOpen && "open"}`}>
