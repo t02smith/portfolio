@@ -95,6 +95,11 @@
     color: white;
     overflow-y: auto;
 
+    > .loading {
+      color: darken(white, 20%);
+      font-style: italic;
+    }
+
     >* {
       margin-bottom: 1rem;
     }

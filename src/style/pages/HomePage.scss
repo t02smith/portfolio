@@ -20,19 +20,18 @@
   justify-content: center;
   text-decoration: none;
   gap: 5px;
-  overflow: hidden;
-  padding-bottom: 3rem;
+  // overflow: hidden;
+  position: relative;
+  margin-bottom: 3rem;
+
 
   &:hover {
     text-decoration: none;
 
-    >h2 {
-      color: black;
-      background-color: white;
-      border-radius: 15px;
-      transition: border-radius 300ms linear;
-    }
+    >img {
+      transform: translateY(-2.5rem);
 
+    }
   }
 
 
@@ -43,30 +42,39 @@
 
   >h2 {
     color: white;
-    background-color: #131313;
-
-    padding: 3px 14px;
+    position: absolute;
+    bottom: 5px;
+    z-index: 1;
+    text-align: center;
   }
 
   >img {
     width: 200px;
     height: 150px;
-
+    background-color: $bg-primary;
+    z-index: 2;
+    transition: 300ms;
   }
 }
 
+
 @media (max-width: 700px) {
+  .quick-links {
+    gap: 15px;
+  }
+
   .quick-link {
     gap: 0;
-    padding-bottom: 10rem;
+    margin-bottom: 10rem;
 
     >h2 {
-      font-size: 1.4rem;
+      font-size: 1.1rem;
     }
 
     >img {
       width: 100px;
       height: 75px;
+      transform: translateY(-2rem);
     }
   }
 }

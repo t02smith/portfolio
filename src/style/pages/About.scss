@@ -1,0 +1,42 @@
+@use "../util/index" as *;
+
+.about {
+  display: flex;
+  overflow-y: hidden;
+
+  > .gallery {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    background-color: lighten($bg-primary, 2%);
+
+    .initial, .copy {
+      display: flex;
+      flex-direction: column;
+      gap: 0rem;
+      animation: gallery-cycle 20s infinite linear;
+
+    } 
+
+    img {
+      max-width: 350px;
+      margin: 0.8rem 1.5rem;
+      border-radius: 0.5rem;
+      
+    }
+  }
+
+  > .content {
+    margin: 1rem;
+  }
+}
+
+@keyframes gallery-cycle {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }   
+}

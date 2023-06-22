@@ -4,6 +4,26 @@
   align-self: flex-start;
 }
 
+
+@mixin animate-fill-name($name, $txt-colour) {
+  $anim-name: $name + "-fill-name";
+  animation: #{$anim-name} 1s 3s forwards ease;
+
+  >path {
+    stroke: $txt-colour;
+  }
+
+  @keyframes #{$anim-name} {
+    from {
+      fill: transparent
+    }
+
+    to {
+      fill: $txt-colour
+    }
+  }
+}
+
 .tom-smith {
   height: 100%;
   width: 100%;
@@ -17,14 +37,20 @@
   >svg {
     position: absolute;
     z-index: 100;
-    animation: fill-name 1s 3s forwards ease;
     max-width: 800px;
     padding: 0rem 2rem;
     top: 10rem;
+
+    &.blue-text {
+      @include animate-fill-name("tom", $txt-colour-secondary);
+    }
+
+    &.white-text {
+      @include animate-fill-name("smith", white);
+    }
   }
 
   path {
-    stroke: $title-colour;
     animation: line-in 5s ease forwards;
   }
 
@@ -72,15 +98,7 @@
   }
 }
 
-@keyframes fill-name {
-  from {
-    fill: transparent
-  }
 
-  to {
-    fill: $title-colour
-  }
-}
 
 .square {
   position: absolute;
