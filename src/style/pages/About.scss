@@ -1,42 +1,172 @@
 @use "../util/index" as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
 .about {
   display: flex;
+  flex-direction: row;
+  width: 100%;
   overflow-y: hidden;
 
-  > .gallery {
-    height: 100vh;
+  >.gallery {
     display: flex;
     flex-direction: column;
     gap: 0rem;
     background-color: lighten($bg-primary, 2%);
 
-    .initial, .copy {
+    .initial,
+    .copy {
       display: flex;
-      flex-direction: column;
       gap: 0rem;
-      animation: gallery-cycle 20s infinite linear;
 
-    } 
+    }
 
     img {
       max-width: 350px;
-      margin: 0.8rem 1.5rem;
       border-radius: 0.5rem;
-      
     }
   }
 
-  > .content {
+  >.about-content {
     margin: 1rem;
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    > .title {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      h1 {
+        font-family: 'Delicious Handrawn', cursive;
+      }
+
+      > .socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        gap: 15px;
+
+        img {
+
+          &.github-icon {
+            width: 40px;
+          }
+
+          &.linkedin-icon {
+            width: 50px;
+          }
+        }
+      }
+    }
+
+    >.info-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      > p {
+        font-size: 1.25rem;
+      }
+
+      >.section {
+        background-color: lighten($bg-primary, 2%);
+        padding: 10px;
+
+        > h2 {
+          display: flex;
+
+          > strong {
+            margin-left: auto;
+            color: $txt-colour-secondary;
+          }
+        }
+      }
+    }
+
+  
   }
 }
 
-@keyframes gallery-cycle {
-    0% {
-      transform: translateY(0);
+@media (max-width: 700px) {
+
+  .about {
+    flex-direction: column;
+
+    >.gallery {
+      flex-direction: row;
+
+      .initial,
+      .copy {
+        animation: none;
+        flex-direction: row;
+        animation: gallery-cycle-mobile 20s infinite linear;
+
+        >img {
+          max-height: 150px;
+          margin: 1.5rem 0.8rem;
+        }
+      }
     }
-    100% {
-      transform: translateY(-100%);
-    }   
+  }
+
+  .about-content {
+    display: flex;
+
+    .title {
+      > h1 {
+        font-size: 2.25rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+
+  .about {
+    >.gallery {
+      height: 100vh;
+
+      .initial,
+      .copy {
+        animation: gallery-cycle-desktop 20s infinite linear;
+        flex-direction: column;
+
+        >img {
+          margin: 0.8rem 1.5rem;
+        }
+      }
+    }
+  }
+
+  .about-content {
+    .title {
+      > h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@keyframes gallery-cycle-desktop {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes gallery-cycle-mobile {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
