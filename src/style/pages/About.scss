@@ -27,39 +27,41 @@
     }
   }
 
-  >.about-content {
-    margin: 1rem;
+  > .about-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .about-content {
     max-width: 1000px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
 
-    > .title {
+    > * {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    >.title {
       display: flex;
-      align-items: center;
-      width: 100%;
+      
 
       h1 {
         font-family: 'Delicious Handrawn', cursive;
+        margin-right: auto;
       }
 
-      > .socials {
+      >.socials {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-left: auto;
-        gap: 15px;
-
-        img {
-
-          &.github-icon {
-            width: 40px;
-          }
-
-          &.linkedin-icon {
-            width: 50px;
-          }
-        }
+        margin-top: 5px;
       }
     }
 
@@ -68,33 +70,83 @@
       flex-direction: column;
       gap: 1rem;
 
-      > p {
-        font-size: 1.25rem;
-      }
+      >.games {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 
-      >.section {
-        background-color: lighten($bg-primary, 2%);
-        padding: 10px;
-
-        > h2 {
+        > .game-covers {
           display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
 
-          > strong {
-            margin-left: auto;
-            color: $txt-colour-secondary;
+          > img {
+            height: 100px;
           }
         }
       }
+
+      >.section {
+        display: flex;
+        flex-direction: column;
+        
+
+        >* {
+          padding: 10px;
+        }
+
+        &.uos>.section-title {
+          background-color: #045889;
+        }
+
+        &.bitweave>.section-title {
+          background-color: rgb(28, 66, 66);
+        }
+
+        > .section-title {
+          display: flex;
+          border-radius: 5px 5px 0 0;
+          
+
+          > strong {
+            margin-left: auto;
+            
+          }
+        }
+
+        >p {
+          background-color: lighten($bg-primary, 3%);
+        }
+
+        a, b {
+          color: $txt-colour-secondary;
+        }
+
+        ul {
+          > li {
+            margin-top: 5px;
+            margin-left: 1.5rem;
+          }
+
+          > p {
+            margin-left: 1.5rem;
+            font-style: italic;
+            color: darken(white, 15%);
+          }
+        }
+
+      }
     }
 
-  
+
   }
 }
 
 @media (max-width: 700px) {
-
   .about {
     flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     >.gallery {
       flex-direction: row;
@@ -113,12 +165,38 @@
     }
   }
 
-  .about-content {
-    display: flex;
+  .about-content-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 
+  .about-content {
     .title {
-      > h1 {
+
+      >h1 {
         font-size: 2.25rem;
+      }
+
+      > .socials {
+        gap: 5px;
+
+        img {
+
+          &.github-icon {
+            width: 30px;
+          }
+
+          &.linkedin-icon {
+            width: 35px;
+          }
+        }
+      }
+    }
+
+    > .info-sections {
+
+      p, em, strong {
+        font-size: 0.8rem;
       }
     }
   }
@@ -142,10 +220,45 @@
     }
   }
 
+  .about-content-wrapper {
+    overflow-y: scroll;
+  }
+
   .about-content {
+    margin-left: auto;
+    margin-right: auto;
+    
     .title {
-      > h1 {
+      >h1 {
         font-size: 4rem;
+      }
+
+      > .socials {
+        gap: 15px;
+
+        img {
+
+          &.github-icon {
+            width: 40px;
+          }
+
+          &.linkedin-icon {
+            width: 50px;
+          }
+        }
+      }
+    }
+
+    > .info-sections {
+
+      >.section {
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      p {
+        font-size: 1.25rem;
       }
     }
   }

@@ -30,6 +30,11 @@ const projects: Array<Project> = [
     name: "This Website",
     logo_file: "/logo.png",
     description_file: "/projects/this_website/description.md"
+  },
+  {
+    name: "WoL-Kit",
+    logo_file: "/projects/wolkit/wolkit.png",
+    description_file: "/projects/wolkit/description.md"
   }
 ]
 
