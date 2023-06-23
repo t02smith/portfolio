@@ -21,6 +21,14 @@ const games = [
   "pokemon.jpg"
 ]
 
+const watchlist = [
+  "got.jpg",
+  "peep-show.jpg",
+  "rick-morty.jpg",
+  "bb.jpg",
+  "office.jpg"
+]
+
 const About = () => {
   return (
     <Page className='about'>
@@ -54,6 +62,10 @@ const About = () => {
               <a href="www.linkedin.com/in/tom-smith-uos">
                 <img className='linkedin-icon' src="/svg/socials/linkedin.svg" alt="" />
               </a>
+
+              <a href="https://steamcommunity.com/profiles/76561198318217586/">
+                <img className='steam-icon' src="/svg/socials/steam.svg" alt="" />
+              </a>
             </div>
           </div>
 
@@ -63,11 +75,20 @@ const About = () => {
               I'm a software engineer and a recent graduate (more below) who has a passion for coding, lifting and gaming. Feel free to shoot me a message at any of my socials.
             </p>
 
-            <div className="games">
-              <p>My all time favourite games:</p>
-              <div className="game-covers">
+            <div className="media">
+              <p><b>🎮 What do I play?</b></p>
+              <div className="media-covers">
                 {games.map((g, i) => (
                   <img src={`/img/games/${g}`} key={i} alt="" />
+                ))}
+              </div>
+            </div>
+
+            <div className="media">
+              <p><b>🎥 What do I watch?</b></p>
+              <div className="media-covers">
+                {watchlist.map((w, i) => (
+                  <img src={`/img/watch/${w}`} key={i} alt="" />
                 ))}
               </div>
             </div>
