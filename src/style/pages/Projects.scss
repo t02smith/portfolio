@@ -7,28 +7,12 @@
   min-height: 100vh;
   overflow: hidden;
 
-  >.header {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem;
-    color: white;
-
-    >a {
-      font-weight: bold;
-      color: white;
-      font-size: 1.5rem;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
-    >h2 {
+  > nav > h2 {
       font-size: 1.5rem;
       margin-left: auto;
       color: $txt-colour-secondary;
-    }
-  }
+   }
+  
 
   .overlay {
     position: absolute;
@@ -147,7 +131,7 @@
 
 @media (max-width: 700px) {
   .projects {
-    >.header {
+    >nav {
       flex-direction: row-reverse;
       z-index: 100;
 
@@ -210,7 +194,7 @@
 
 @media (min-width: 700px) {
   .projects {
-    >.header {
+    >nav {
       >img {
         display: none;
       }

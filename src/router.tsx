@@ -6,15 +6,15 @@ import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <HomePage />,
   },
   {
-    path: "/projects",
+    path: "projects",
     element: <Projects />
   },
   {
-    path: "/about",
+    path: "about",
     element: <About />
   },
   {

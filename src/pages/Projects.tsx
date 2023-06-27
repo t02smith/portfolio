@@ -74,11 +74,11 @@ const Projects = () => {
 
   return (
     <Page className="projects">
-      <div className="header">
+      <nav>
         <Link to="/">Tom Smith</Link>
         <img onClick={() => setSidebarOpen(!sidebarOpen)} src="/svg/icons/burger.svg" className={`${sidebarOpen && "open"}`} alt="" />
         <h2>🛠️ My Projects</h2>
-      </div>
+      </nav>
 
       <div className="project-table">
         <ul className={`${sidebarOpen && "open"}`}>
