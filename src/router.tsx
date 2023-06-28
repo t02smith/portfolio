@@ -6,7 +6,7 @@ import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <HomePage />,
   },
   {
