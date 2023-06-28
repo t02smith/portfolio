@@ -6,21 +6,23 @@ import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     element: <HomePage />,
   },
   {
-    path: "projects",
+    path: "/projects",
     element: <Projects />
   },
   {
-    path: "about",
+    path: "/about",
     element: <About />
   },
   {
-    path: "*",
+    path: "/*",
     element: < NotFound />
   }
-])
+], {
+  basename: "https://t02smith.com"
+})
 
 export default router;
