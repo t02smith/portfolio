@@ -112,7 +112,7 @@ const About = () => {
                 I would consider the 3 years I spent at university to be life-changing but whether that is a good or bad thing remains to be seen. Either way it's over now and I'll use this space to talk about some of the more interesting things I did.
               </p>
 
-              <p>
+              <div>
                 <b>My Third Year</b><br />
                 The bulk of my third year was spent on my project, <b>Using Blockchain for Video Game Distribution</b> (<a href="/projects?project=Blockware">click here</a>), but I did some other things that are worth mentioning too:
 
@@ -127,12 +127,12 @@ const About = () => {
                   <p>What protocols should I use for my network and how should devices be arranged? This module had me researching various protocols that each target different use-cases and looking at how they work and how they compare to similar technologies. As part of this module I created <b>Wol-Kit</b> (<a href="/projects?project=wol-kit">click here</a>).</p>
 
                   <li>Web and Cloud Security</li>
-                  <p>How can I secure my website and how can I test that it is secure? This module looked at various ways security can be increased on web-facing services, including common vulnerabilities and methods on how to methodically find them. During this module I worked on <b>RobPress</b> and <b>Rob the Bank</b> (<a href="/projects?project=RobPress+and+RobBank">click here</a>)</p>.
+                  <p>How can I secure my website and how can I test that it is secure? This module looked at various ways security can be increased on web-facing services, including common vulnerabilities and methods on how to methodically find them. During this module I worked on <b>RobPress</b> and <b>Rob the Bank</b> (<a href="/projects?project=RobPress+and+RobBank">click here</a>).</p>
 
                   <li>Web Architecture and Hypertext Technology</li>
                 </ul>
 
-              </p>
+              </div>
             </div>
           </div>
         </div>

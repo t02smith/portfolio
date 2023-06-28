@@ -26,7 +26,7 @@ const HomePage = () => {
       </div>
 
       <motion.div className='quick-links' initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 3, duration: 1 }}>
-        {quickLinks.map((ql, i) => (<motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 3.25 + (0.25 * i), duration: 1 }}>
+        {quickLinks.map((ql, i) => (<motion.div key={i} initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 3.25 + (0.25 * i), duration: 1 }}>
           <QuickLink key={i} {...ql} />
         </motion.div>))}
       </motion.div>
