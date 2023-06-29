@@ -109,7 +109,7 @@ const About = () => {
                 <strong>University of Southampton</strong>
               </div>
               <p>
-                I would consider the 3 years I spent at university to be life-changing but whether that is a good or bad thing remains to be seen. Either way it's over now and I'll use this space to talk about some of the more interesting things I did.
+                I finished university achieving a First (at 75%) and learnt a hell of a lot on the way. Below I'll talk about some of the more interesting things I did during my time:
               </p>
 
               <div>
@@ -129,10 +129,15 @@ const About = () => {
                   <li>Web and Cloud Security</li>
                   <p>How can I secure my website and how can I test that it is secure? This module looked at various ways security can be increased on web-facing services, including common vulnerabilities and methods on how to methodically find them. During this module I worked on <b>RobPress</b> and <b>Rob the Bank</b> (<a href="/projects?project=RobPress+and+RobBank">click here</a>).</p>
 
-                  <li>Web Architecture and Hypertext Technology</li>
+                  {/* <li>Web Architecture and Hypertext Technology</li> */}
                 </ul>
 
               </div>
+
+              {/* <div>
+                <b>My Second Year</b><br />
+
+              </div> */}
             </div>
           </div>
         </div>

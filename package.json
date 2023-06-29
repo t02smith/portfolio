@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://t02smith.com",
+  "homepage": "https://portfolio.t02smith.com",
   "scripts": {
     "dev": "vite dev --host",
     "build": "tsc && vite build",
