@@ -1,0 +1,92 @@
+@use "../util/index" as *;
+
+nav {
+  background-color: darken($bg-primary, 2%);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  color: white;
+  height: $navbar-height;
+
+  >.burger {
+    display: none;
+    width: 30px;
+    height: 30px;
+    transition: 150ms;
+
+    &.open {
+      transform: rotate(90deg);
+    }
+  }
+
+  >* {
+    padding: 0.75rem;
+  }
+
+  >a {
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  >h2 {
+    font-size: 1.5rem;
+    margin-left: auto;
+    color: $txt-colour-secondary;
+  }
+
+  >.page-select-wrapper {
+    margin-left: auto;
+  }
+
+}
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.47);
+
+}
+
+.children-wrapper {
+  margin-top: $navbar-height;
+  display: none;
+  left: -100%;
+  position: absolute;
+  z-index: 101;
+  height: 100%;
+  transition: 250ms;
+
+  &.open {
+    left: 0;
+  }
+
+  a {
+    margin-top: auto;
+  }
+}
+
+
+@media (max-width: 700px) {
+  nav {
+
+    >.burger {
+      display: block;
+    }
+
+    >.has-burger-menu {
+      display: none;
+    }
+  }
+
+  .children-wrapper {
+    display: block;
+  }
+}

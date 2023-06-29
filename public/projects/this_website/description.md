@@ -11,9 +11,9 @@ TypeScript was an obvious choice as static typing was very sorely missed during 
 This website uses [react-router-dom](https://reactrouter.com/en/main) to display different content for different endpoints. Namely:
 
 - *[/](/)* The home page
-- *[/projects?project={}](/projects)* Showing off some of my projects
-- *[/about](/about)* Some information about myself
-- *[/blog](/blog)* Some blogs written by myself **TODO**
+- *[/projects?project={}](/#/projects)* Showing off some of my projects
+- *[/about](/#/about)* Some information about myself
+- *[/blog](/#/blog)* Some blogs written by myself **TODO**
 
 ## 🛠️ Tools
 

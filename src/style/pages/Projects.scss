@@ -7,19 +7,43 @@
   min-height: 100vh;
   overflow: hidden;
 
-  > nav > h2 {
-      font-size: 1.5rem;
-      margin-left: auto;
+}
+
+.project-table>ul,
+.nav-menu {
+  height: 100%;
+  background-color: lighten($bg-primary, 2%);
+
+  >li {
+    color: white;
+    font-weight: bold;
+    background-color: lighten($bg-primary, 10%);
+    cursor: pointer;
+    transition: 150ms;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    align-items: center;
+    padding-right: 10px;
+
+    >img {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      background-color: darken($bg-primary, 2%);
       color: $txt-colour-secondary;
-   }
-  
+    }
 
-  .overlay {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.47);
+    &:nth-child(even) {
+      background-color: lighten($bg-primary, 5%);
 
+      &:hover {
+        background-color: darken($bg-primary, 2%);
+        color: $txt-colour-secondary;
+      }
+    }
   }
 }
 
@@ -33,53 +57,14 @@
   overflow: hidden;
   height: 100%;
 
-  >ul {
-    height: 100%;
-    background-color: lighten($bg-primary, 2%);
-    overflow: auto;
 
-    >li {
-      color: white;
-      font-weight: bold;
-      background-color: lighten($bg-primary, 10%);
-      cursor: pointer;
-      transition: 150ms;
-      display: flex;
-      gap: 0.5rem;
-      font-size: 1.2rem;
-      align-items: center;
-      padding-right: 10px;
-
-      >img {
-        width: 50px;
-        height: 50px;
-      }
-
-      &:hover {
-        background-color: darken($bg-primary, 2%);
-        color: $txt-colour-secondary;
-      }
-
-      &:nth-child(even) {
-        background-color: lighten($bg-primary, 5%);
-
-        &:hover {
-          background-color: darken($bg-primary, 2%);
-          color: $txt-colour-secondary;
-        }
-      }
-    }
-
-
-
-  }
 
   >.content {
     padding: 1rem;
     color: white;
     overflow-y: auto;
 
-    > .loading {
+    >.loading {
       color: darken(white, 20%);
       font-style: italic;
     }
@@ -130,44 +115,13 @@
 }
 
 @media (max-width: 700px) {
-  .projects {
-    >nav {
-      flex-direction: row-reverse;
-      z-index: 100;
-
-      >img {
-        display: block;
-        margin-right: auto;
-        width: 30px;
-        height: 30px;
-        transition: 150ms;
-
-        &.open {
-          transform: rotate(90deg);
-
-        }
-      }
-
-      >h2 {
-        display: none;
-      }
-    }
-  }
-
   .project-table {
-    display: flex;
+    grid-template-columns: 1fr;
 
-    >ul {
-      height: 100vh;
-      position: absolute;
-      left: -100%;
-      transition: 150ms;
-      z-index: 100;
-
-      &.open {
-        left: 0;
-      }
+    > ul {
+      display: none;
     }
+
   }
 
   .overlay {
@@ -179,7 +133,6 @@
   }
 
   .content {
-
     >* {
       max-width: 100%;
     }
@@ -206,6 +159,8 @@
   }
 
   .content {
+    width: 100%;
+
     >* {
       max-width: 1000px;
     }

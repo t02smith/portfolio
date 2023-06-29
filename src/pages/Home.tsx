@@ -15,10 +15,15 @@ const quickLinks: Array<QuickLinkParams> = [
     name: "My Projects",
     link: "/projects",
     icon_link: "/svg/icons/books.svg"
+  },
+  {
+    name: "Blog",
+    link: "/blog",
+    icon_link: "/svg/icons/megaphone.svg"
   }
 ]
 
-const HomePage = () => {
+const Home = () => {
   return (
     <Page className='home-page'>
       <div className="title-wrapper">
@@ -36,4 +41,4 @@ const HomePage = () => {
 
 
 
-export default HomePage
+export default Home

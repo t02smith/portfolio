@@ -1,13 +1,15 @@
 import { createHashRouter } from "react-router-dom";
-import HomePage from "@/pages/HomePage";
+import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound"
 import Projects from "@/pages/Projects";
 import About from "./pages/About";
+import BlogHome from "./pages/BlogHome";
+import BlogPost from "./pages/BlogPost";
 
 const router = createHashRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Home />,
   },
   {
     path: "/projects",
@@ -16,6 +18,14 @@ const router = createHashRouter([
   {
     path: "/about",
     element: <About />
+  },
+  {
+    path: "/blog",
+    element: <BlogHome />
+  },
+  {
+    path: "/blog/:postId",
+    element: <BlogPost />
   },
   {
     path: "*",

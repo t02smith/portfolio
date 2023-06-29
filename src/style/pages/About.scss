@@ -3,12 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 
 .about {
-  display: flex;
-  flex-direction: row;
   width: 100%;
-  overflow-y: hidden;
+  overflow-y: auto;
 
-  >.gallery {
+ 
+
+  .gallery {
     display: flex;
     flex-direction: column;
     gap: 0rem;
@@ -27,13 +27,14 @@
     }
   }
 
-  > .about-content-wrapper {
+  .about-content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    overflow-y: scroll;
   }
 
   .about-content {
@@ -41,8 +42,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    
 
-    > * {
+    >* {
       padding-right: 10px;
       padding-left: 10px;
     }
@@ -75,12 +77,12 @@
         flex-direction: column;
         gap: 5px;
 
-        > .media-covers {
+        >.media-covers {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
 
-          > img {
+          >img {
             height: 100px;
           }
         }
@@ -89,7 +91,7 @@
       >.section {
         display: flex;
         flex-direction: column;
-        
+
 
         >* {
           padding: 10px;
@@ -103,32 +105,34 @@
           background-color: rgb(28, 66, 66);
         }
 
-        > .section-title {
+        >.section-title {
           display: flex;
           border-radius: 5px 5px 0 0;
-          
 
-          > strong {
+
+          >strong {
             margin-left: auto;
-            
+
           }
         }
 
-        >p, div {
+        >p,
+        div {
           background-color: lighten($bg-primary, 3%);
         }
 
-        a, b {
+        a,
+        b {
           color: $txt-colour-secondary;
         }
 
         ul {
-          > li {
+          >li {
             margin-top: 5px;
             margin-left: 1.5rem;
           }
 
-          > p {
+          >p {
             margin-left: 1.5rem;
             font-style: italic;
             color: darken(white, 15%);
@@ -148,7 +152,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
-    >.gallery {
+    .gallery {
       flex-direction: row;
 
       .initial,
@@ -177,7 +181,7 @@
         font-size: 2.25rem;
       }
 
-      > .socials {
+      >.socials {
         gap: 5px;
 
         img {
@@ -197,9 +201,11 @@
       }
     }
 
-    > .info-sections {
+    >.info-sections {
 
-      p, em, strong {
+      p,
+      em,
+      strong {
         font-size: 0.8rem;
       }
     }
@@ -209,7 +215,7 @@
 @media (min-width: 700px) {
 
   .about {
-    >.gallery {
+    .gallery {
       height: 100vh;
 
       .initial,
@@ -228,16 +234,22 @@
     overflow-y: scroll;
   }
 
+  .page-content {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+  }
+
   .about-content {
     margin-left: auto;
     margin-right: auto;
-    
+
     .title {
       >h1 {
         font-size: 4rem;
       }
 
-      > .socials {
+      >.socials {
         gap: 15px;
 
         img {
@@ -257,7 +269,7 @@
       }
     }
 
-    > .info-sections {
+    >.info-sections {
 
       >.section {
         p {

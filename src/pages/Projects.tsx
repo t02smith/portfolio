@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Page from './Page'
 import "@/style/pages/Projects.scss"
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import Navbar from '@/components/Navbar'
 
 type Project = {
   name: string
@@ -46,7 +47,7 @@ const Projects = () => {
 
   const [mdContent, setMdContent] = useState<string | null>(null);
 
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+  const [closeMenu, setCloseMenu] = useState<number>(0);
 
   async function loadMarkdownFile(path: string) {
     const response = await fetch(path);
@@ -65,23 +66,24 @@ const Projects = () => {
   useEffect(() => {
     if (!activeProject) return;
 
-    setSidebarOpen(false)
+    setCloseMenu(closeMenu+1)
     navigate(`?project=${activeProject.name.replaceAll(" ", "+")}`, { replace: true })
     loadMarkdownFile(activeProject.description_file)
   }, [activeProject, navigate])
 
-
-
   return (
     <Page className="projects">
-      <nav>
-        <Link to="/">Tom Smith</Link>
-        <img onClick={() => setSidebarOpen(!sidebarOpen)} src="/svg/icons/burger.svg" className={`${sidebarOpen && "open"}`} alt="" />
-        <h2>🛠️ My Projects</h2>
-      </nav>
 
-      <div className="project-table">
-        <ul className={`${sidebarOpen && "open"}`}>
+      <Navbar currentPageId='projects' closeMenu={closeMenu}>
+        <ul className="nav-menu">
+          {projects.map((p, i) => (
+            <li key={i} onClick={() => setActiveProject(p)}> <img src={`${p.logo_file}`} alt="" /> {p.name}</li>
+          ))}
+        </ul>
+      </Navbar>
+
+      <div className="project-table page-content">
+        <ul>
           {projects.map((p, i) => (
             <li key={i} onClick={() => setActiveProject(p)}> <img src={`${p.logo_file}`} alt="" /> {p.name}</li>
           ))}
@@ -92,14 +94,11 @@ const Projects = () => {
             activeProject && mdContent
               ? <ReactMarkdown children={mdContent} />
               : <h2 className='loading'>
-              Loading content...
-            </h2>
+                Loading content...
+              </h2>
           }
         </div>
       </div>
-
-      <div className={`overlay ${sidebarOpen && "show"}`} onClick={() => setSidebarOpen(false)}></div>
-
     </Page>
   )
 }
