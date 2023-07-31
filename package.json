@@ -1,39 +1,24 @@
 {
-  "name": "t02smith.github.io",
+  "name": "nuxt-app",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "homepage": "https://portfolio.t02smith.com",
   "scripts": {
-    "dev": "vite dev --host",
-    "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "vite build",
-    "deploy": "gh-pages -d dist"
-  },
-  "dependencies": {
-    "framer-motion": "^10.12.12",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-markdown": "^8.0.7",
-    "react-router-dom": "^6.11.2",
-    "react-scripts": "^5.0.1",
-    "sass": "^1.62.1"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@types/node": "^20.2.3",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^5.57.1",
-    "@typescript-eslint/parser": "^5.57.1",
-    "@vitejs/plugin-react": "^4.0.0",
-    "eslint": "^8.38.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4",
-    "gh-pages": "^5.0.0",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.2"
+    "@nuxt/content": "^2.7.2",
+    "@nuxt/devtools": "latest",
+    "@types/node": "^18.17.1",
+    "nuxt": "^3.6.5"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "@vueuse/motion": "^2.0.0",
+    "pinia": "^2.1.6",
+    "sass": "^1.64.1",
+    "sass-loader": "^13.3.2"
   }
 }

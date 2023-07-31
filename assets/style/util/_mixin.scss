@@ -1,0 +1,20 @@
+@use "./variables" as *;
+
+@mixin animate-fill-name($name, $txt-colour) {
+  $anim-name: $name + "-fill-name";
+  animation: #{$anim-name} 1s 3s forwards ease;
+
+  >path {
+    stroke: $txt-colour;
+  }
+
+  @keyframes #{$anim-name} {
+    from {
+      fill: transparent;
+    }
+
+    to {
+      fill: $txt-colour;
+    }
+  }
+}
