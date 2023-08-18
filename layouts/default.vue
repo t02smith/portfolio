@@ -15,10 +15,12 @@
   color: white;
   overflow-y: hidden;
   overflow-x: hidden;
+  height: 100%;
 
   .page-content {
     padding-top: $navbar-height;
     overflow-y: hidden;
+    height: 100%;
   }
 }
 </style>

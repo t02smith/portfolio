@@ -1,3 +1,8 @@
+---
+title: This Website
+overview: How this site was made
+logo: /icons/projects/this-site.png
+---
 # This Website
 
 > [https://github.com/t02smith/t02smith.github.io](https://github.com/t02smith/t02smith.github.io)

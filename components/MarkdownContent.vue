@@ -28,6 +28,10 @@
     margin-bottom: 0.4rem;
   }
 
+  h2 {
+    margin: 10px 0;
+  }
+
   li {
     margin-left: 1.2rem;
   }
@@ -37,6 +41,7 @@
     padding: 0.5rem;
     font-weight: bold;
     border-left: solid 5px $txt-secondary;
+    margin: 5px 0;
   }
 
   a {
