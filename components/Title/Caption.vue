@@ -1,23 +1,8 @@
 <template>
-  <p v-motion :initial="initial" :enter="enter">
+  <p>
     Software Engineer @ <a href="https://www.bitweave.com/">Bitweave</a>
   </p>
 </template>
-<script setup lang="ts">
-const initial = ref({
-  opacity: 0,
-  y: 25,
-});
-
-const enter = ref({
-  opacity: 1,
-  y: 0,
-  transition: {
-    delay: 3,
-    duration: 1,
-  },
-});
-</script>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
 
@@ -27,10 +12,13 @@ p {
   color: rgb(164, 164, 164);
   z-index: 100;
   top: 7rem;
+  opacity: 0;
+  animation: fade-in 1s 3s ease-in forwards;
 
-  > a {
+  >a {
     font-weight: bold;
     color: $txt-secondary;
+
   }
 }
 
@@ -40,10 +28,23 @@ p {
     font-size: 1.15rem;
   }
 }
+
 @media (min-width: 700px) {
   p {
     margin-top: 11rem;
     font-size: 1.8rem;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 </style>

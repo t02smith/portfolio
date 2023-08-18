@@ -15,12 +15,17 @@
   color: white;
   overflow-y: hidden;
   overflow-x: hidden;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   .page-content {
     padding-top: $navbar-height;
     overflow-y: hidden;
     height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>

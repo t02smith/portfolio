@@ -22,7 +22,6 @@ const props = defineProps<{
   text-decoration: none;
   gap: 5px;
   position: relative;
-  margin-bottom: 3rem;
 
   &:hover {
     text-decoration: none;
@@ -46,11 +45,30 @@ const props = defineProps<{
   }
 
   >img {
-    width: 200px;
-    height: 150px;
+    width: 130px;
+    height: 100px;
     background-color: $bg-primary;
     z-index: 2;
     transition: 300ms;
+  }
+}
+
+@media (max-width: 700px) {
+  .quick-link {
+    margin-bottom: 8rem;
+
+    >img {}
+  }
+}
+
+@media (min-width: 700px) {
+  .quick-link {
+    margin-bottom: 5rem;
+
+    >img {
+      width: 200px;
+      height: 150px;
+    }
   }
 }
 </style>

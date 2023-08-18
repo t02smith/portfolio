@@ -79,4 +79,24 @@ const props = defineProps<{
     }
   }
 }
+
+@media (min-width: 700px) {
+  .project-option.hide {
+    display: content;
+  }
+
+  .project-option.selector {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .project-option.hide {
+    display: none;
+  }
+
+  .project-option.selector {
+    display: content;
+  }
+}
 </style>

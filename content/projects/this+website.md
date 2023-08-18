@@ -1,6 +1,6 @@
 ---
 title: This Website
-overview: How this site was made
+overview: Learn some more about the site you're looking at right now!
 logo: /icons/projects/this-site.png
 ---
 # This Website

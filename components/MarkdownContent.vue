@@ -14,6 +14,7 @@
   height: 100%;
   justify-content: center;
   flex: 1;
+  padding-bottom: 2.5rem;
 }
 
 .md-content {
@@ -53,8 +54,10 @@
     color: darken(white, 15%);
   }
 
-  img {
-    background-color: darken(white, 5%);
+  .image img {
+    width: 60%;
+    background-color: darken(white, 7%);
+    margin: 1rem 0;
   }
 
   strong {

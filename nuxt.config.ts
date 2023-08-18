@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: {enabled: true},
-  modules: ["@vueuse/motion/nuxt", '@nuxt/content'],
+  modules: ["@vueuse/motion/nuxt", "@nuxt/content"],
   css: ["~/assets/style/app.scss"],
 });

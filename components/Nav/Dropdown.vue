@@ -53,6 +53,8 @@ const optionsOpen = ref<boolean>(false);
 const currentPage = ref<PageSelect>(
   pages.find((p) => route.path.startsWith(p.link))!
 );
+
+watch(currentPage, () => optionsOpen.value = false);
 </script>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
