@@ -3,9 +3,10 @@ title: BlockWare
 overview: A blockchain-based distributed market for buying and selling video games.
 logo: /icons/projects/blockware.png
 ---
+
 # Using Blockchain for Video Game Distribution
 
-> [https://github.com/t02smith/part-iii-project](https://github.com/t02smith/part-iii-project) (Once it has been marked and I can make it public 😝)
+> [https://github.com/t02smith/blockware](https://github.com/t02smith/blockware)
 
 Millions of worldwide users enjoy video games, which are large pieces of software that require complex platforms to distribute them. This results in them being generally provided by multinational corporations.
 However, this approach often results in these platforms:
@@ -13,7 +14,7 @@ However, this approach often results in these platforms:
 - taking a large cut of revenue from developers,
 - being prone to censorship from entities like governments,
 - relying on a single platform to stay active, distribute games, and maintain a user’s
-ownership.
+  ownership.
 
 Modern web technology allows users to build and deploy their own platforms, which can
 be made with the users in mind and not financial gain or pressure from governing bodies.
@@ -31,6 +32,7 @@ Blockware uses the MVC pattern and is divided into the following three parts:
 <div class="image">
 
 ![architecture diagram](/img/projects/blockware/layers.png)
+
 </div>
 
 ### ♻️ P2P File Sharing
@@ -40,6 +42,7 @@ Blockware implements a custom P2P file sharing protocol for the large-scale dist
 <div class="image">
 
 ![hash tree](/img/projects/blockware/hashtree.png)
+
 </div>
 
 Users exchange blocks of data in order to download games. Some notable features include:
@@ -59,7 +62,6 @@ An Ethereum smart contract was written and deployed to Sepolia [(take a look her
 - storing a record of which users have purchased which games
 - storing metadata about each of the games that help to identify it
 
-
 ## 🛠️ Tools used
 
 <div class="tools">
@@ -72,4 +74,5 @@ An Ethereum smart contract was written and deployed to Sepolia [(take a look her
 ![Solidity Badge](https://img.shields.io/badge/Solidity-363636?logo=solidity&logoColor=fff&style=for-the-badge)
 ![Ethereum Badge](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=fff&style=for-the-badge)
 ![IPFS Badge](https://img.shields.io/badge/IPFS-65C2CB?logo=ipfs&logoColor=fff&style=for-the-badge)
+
 </div>

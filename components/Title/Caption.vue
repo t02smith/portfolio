@@ -1,7 +1,5 @@
 <template>
-  <p>
-    Software Engineer @ <a href="https://www.bitweave.com/">Bitweave</a>
-  </p>
+  <p>Software Engineer @ <a href="https://www.bitweave.com/">Bitweave</a></p>
 </template>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
@@ -15,10 +13,9 @@ p {
   opacity: 0;
   animation: fade-in 1s 3s ease-in forwards;
 
-  >a {
+  > a {
     font-weight: bold;
     color: $txt-secondary;
-
   }
 }
 

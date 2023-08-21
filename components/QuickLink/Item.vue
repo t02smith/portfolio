@@ -1,6 +1,12 @@
 <template>
-  <a :href="props.link" class="quick-link">
-    <img :src="props.icon_link" alt="" />
+  <a
+    :href="props.link"
+    class="quick-link"
+  >
+    <img
+      :src="props.icon_link"
+      alt=""
+    />
     <h2>{{ props.name }}</h2>
   </a>
 </template>
@@ -26,17 +32,17 @@ const props = defineProps<{
   &:hover {
     text-decoration: none;
 
-    >img {
+    > img {
       transform: translateY(-2.5rem);
     }
   }
 
-  >*:first-child {
+  > *:first-child {
     color: rgb(0, 174, 255);
     font-size: 6rem;
   }
 
-  >h2 {
+  > h2 {
     color: white;
     position: absolute;
     bottom: 5px;
@@ -44,7 +50,7 @@ const props = defineProps<{
     text-align: center;
   }
 
-  >img {
+  > img {
     width: 130px;
     height: 100px;
     background-color: $bg-primary;
@@ -57,7 +63,8 @@ const props = defineProps<{
   .quick-link {
     margin-bottom: 8rem;
 
-    >img {}
+    > img {
+    }
   }
 }
 
@@ -65,7 +72,7 @@ const props = defineProps<{
   .quick-link {
     margin-bottom: 5rem;
 
-    >img {
+    > img {
       width: 200px;
       height: 150px;
     }

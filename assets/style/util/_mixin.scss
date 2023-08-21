@@ -4,7 +4,7 @@
   $anim-name: $name + "-fill-name";
   animation: #{$anim-name} 1s 3s forwards ease;
 
-  >path {
+  > path {
     stroke: $txt-colour;
   }
 

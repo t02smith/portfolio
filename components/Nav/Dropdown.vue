@@ -1,9 +1,16 @@
 <template>
   <div class="wrapper">
     <div class="page-select">
-      <div v-if="currentPage" class="current" @click="() => (optionsOpen = !optionsOpen)">
+      <div
+        v-if="currentPage"
+        class="current"
+        @click="() => (optionsOpen = !optionsOpen)"
+      >
         <div class="item">
-          <img :src="currentPage.logo_link" alt="" />
+          <img
+            :src="currentPage.logo_link"
+            alt=""
+          />
           <strong>{{ currentPage.text }}</strong>
         </div>
         <div class="toggle">
@@ -13,16 +20,23 @@
     </div>
 
     <div :class="`options ${optionsOpen && 'active'}`">
-      <NuxtLink @click="() => currentPage = p" v-for="p in pages.filter((pg) => !route.path.startsWith(pg.link))" :to="p.link" class="item">
-        <img :src="p.logo_link" alt="">
+      <NuxtLink
+        @click="() => (currentPage = p)"
+        v-for="p in pages.filter((pg) => !route.path.startsWith(pg.link))"
+        :to="p.link"
+        class="item"
+      >
+        <img
+          :src="p.logo_link"
+          alt=""
+        />
         <strong>{{ p.text }}</strong>
       </NuxtLink>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-
-const route = useRoute()
+const route = useRoute();
 
 type PageSelect = {
   text: string;
@@ -48,13 +62,12 @@ const pages: Array<PageSelect> = [
   },
 ];
 
-
 const optionsOpen = ref<boolean>(false);
 const currentPage = ref<PageSelect>(
-  pages.find((p) => route.path.startsWith(p.link))!
+  pages.find((p) => route.path.startsWith(p.link))!,
 );
 
-watch(currentPage, () => optionsOpen.value = false);
+watch(currentPage, () => (optionsOpen.value = false));
 </script>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
@@ -71,7 +84,7 @@ watch(currentPage, () => optionsOpen.value = false);
     gap: 0.6rem;
     min-width: 120px;
 
-    >img {
+    > img {
       height: 25px;
     }
   }
@@ -86,28 +99,25 @@ watch(currentPage, () => optionsOpen.value = false);
   padding: 0;
   position: relative;
 
-
-  >.current {
+  > .current {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 
-
-    >* {
+    > * {
       border-radius: 7px;
     }
 
-    >.item {
+    > .item {
       background-color: lighten($bg-primary, 5%);
       padding: 0.3rem 1rem;
     }
 
-    >.toggle {
+    > .toggle {
       padding: 0.5rem 0.6rem;
     }
   }
-
 }
 
 .options {
@@ -120,18 +130,16 @@ watch(currentPage, () => optionsOpen.value = false);
   align-items: flex-start;
   margin-top: 1rem;
 
-
   &.active {
     transform: translateY(0);
   }
 
-  >.item {
+  > .item {
     background-color: lighten($bg-primary, 5%);
     padding: 7px 15px;
     color: darken(white, 20%);
     width: 110px;
     transition: 150ms;
-
 
     &:hover {
       background-color: lighten($bg-primary, 2%);

@@ -1,5 +1,9 @@
 <template>
-  <path :d="props.d" v-motion :enter="enter"></path>
+  <path
+    :d="props.d"
+    v-motion
+    :enter="enter"
+  ></path>
 </template>
 <script setup lang="ts">
 const props = defineProps<{

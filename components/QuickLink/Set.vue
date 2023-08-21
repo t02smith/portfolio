@@ -1,6 +1,11 @@
 <template>
   <div class="quick-links">
-    <QuickLinkItem v-for="q in quickLinks" :link="q.link" :icon_link="q.icon_link" :name="q.name" />
+    <QuickLinkItem
+      v-for="q in quickLinks"
+      :link="q.link"
+      :icon_link="q.icon_link"
+      :name="q.name"
+    />
   </div>
 </template>
 <script setup lang="ts">
@@ -9,22 +14,22 @@ const quickLinks: Array<{
   icon_link: string;
   name: string;
 }> = [
-    {
-      name: "About Me",
-      link: "/about",
-      icon_link: "/icons/quick_links/about.svg",
-    },
-    {
-      name: "My Projects",
-      link: "/projects",
-      icon_link: "/icons/quick_links/books.svg",
-    },
-    {
-      name: "Blog",
-      link: "/blog",
-      icon_link: "/icons/quick_links/megaphone.svg",
-    },
-  ];
+  {
+    name: "About Me",
+    link: "/about",
+    icon_link: "/icons/quick_links/about.svg",
+  },
+  {
+    name: "My Projects",
+    link: "/projects",
+    icon_link: "/icons/quick_links/books.svg",
+  },
+  {
+    name: "Blog",
+    link: "/blog",
+    icon_link: "/icons/quick_links/megaphone.svg",
+  },
+];
 </script>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;

@@ -3,6 +3,7 @@ title: Untitled Chore App
 overview: A weekly chore manager that generates timetables and ranks users by their contributions.
 logo: /icons/projects/uca.png
 ---
+
 # Untitled Chore App
 
 > [https://github.com/t02smith/untitled-chore-app](https://github.com/t02smith/untitled-chore-app)
@@ -14,7 +15,7 @@ Have you ever:
 - ✅ Ran out of toilet paper because no one bought any?​
 - ✅ Had to dig out all your house-mates kitchen supplies from the sink?
 
-It's a common problem at home for a lot of people; especially students. **Untitled Chore App* provides automated chore timetabling for each home you find yourself a part of that is refreshed weekly and allows you track which of your housemates aren't pulling their weight.
+It's a common problem at home for a lot of people; especially students. \*_Untitled Chore App_ provides automated chore timetabling for each home you find yourself a part of that is refreshed weekly and allows you track which of your housemates aren't pulling their weight.
 
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)
 ![FastAPI Badge](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=fff&style=for-the-badge)
@@ -25,7 +26,7 @@ It's a common problem at home for a lot of people; especially students. **Untitl
 
 This project was part of the **Cloud Application Development** module at the **University of Southampton** and was a group project by:
 
-- Myself 
+- Myself
 - Tom Cutts [https://github.com/Spratt93](https://github.com/Spratt93)
 - Dean Davey [https://github.com/Davey-Dean](https://github.com/Davey-Dean)
 - Jaret Wrintmore [https://github.com/W8up](https://github.com/W8up)
@@ -35,6 +36,7 @@ This project was part of the **Cloud Application Development** module at the **U
 <div class="image">
 
 ![architecture](/img/projects/uca/architecture.png)
+
 </div>
 
 ### 🎨 Frontend
@@ -44,6 +46,7 @@ The frontend was built using the component framework [🟩 Vue.js v3](https://vu
 <div class="image">
 
 ![dashboard](/img/projects/uca/dashboard.png)
+
 </div>
 
 As you can see, each user has a score next to them. This is their **Chore Score**; this value shows how good a user is at performing their chores and it calculated at each refresh of a timetable. Users with a lower Chore Score will be first in line to be allocated the more difficult chores.

@@ -3,11 +3,12 @@ title: This Website
 overview: Learn some more about the site you're looking at right now!
 logo: /icons/projects/this-site.png
 ---
+
 # This Website
 
 > [https://github.com/t02smith/t02smith.github.io](https://github.com/t02smith/t02smith.github.io)
 
-This repository shows the source code for the website you are looking at right now! This is currently being hosted by **GitHub Pages** for *free*.
+This repository shows the source code for the website you are looking at right now! This is currently being hosted by **GitHub Pages** for _free_.
 
 TypeScript was an obvious choice as static typing was very sorely missed during my time spent on [Untitled Chore App](/projects?Untitled+Chore+App) and allows me to easily understand this code when I return after months of leaving this code abandoned. SCSS makes writing CSS more concise and the support for mixins and placeholders allow me to reduce the amount of styling I need to write ([CSS nesting does look pretty nice though 👀](https://developer.chrome.com/articles/css-nesting/)).
 
@@ -15,10 +16,10 @@ TypeScript was an obvious choice as static typing was very sorely missed during 
 
 This website uses [react-router-dom](https://reactrouter.com/en/main) to display different content for different endpoints. Namely:
 
-- *[/](/)* The home page
-- *[/projects?project={}](/#/projects)* Showing off some of my projects
-- *[/about](/#/about)* Some information about myself
-- *[/blog](/#/blog)* Some blogs written by myself **TODO**
+- _[/](/)_ The home page
+- _[/projects?project={}](/#/projects)_ Showing off some of my projects
+- _[/about](/#/about)_ Some information about myself
+- _[/blog](/#/blog)_ Some blogs written by myself **TODO**
 
 ## 🛠️ Tools
 
