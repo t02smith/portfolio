@@ -66,7 +66,7 @@ svg {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $size-mobile) {
   svg {
     top: 5rem;
     padding: 0rem 1.2rem;

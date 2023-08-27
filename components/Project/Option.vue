@@ -84,7 +84,7 @@ const props = defineProps<{
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $size-mobile) {
   .project-option.hide {
     display: content;
   }
@@ -94,7 +94,7 @@ const props = defineProps<{
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $size-mobile) {
   .project-option.hide {
     display: none;
   }

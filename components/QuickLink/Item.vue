@@ -59,7 +59,7 @@ const props = defineProps<{
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $size-mobile) {
   .quick-link {
     margin-bottom: 8rem;
 
@@ -68,7 +68,7 @@ const props = defineProps<{
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $size-mobile) {
   .quick-link {
     margin-bottom: 5rem;
 

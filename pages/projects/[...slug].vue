@@ -90,7 +90,7 @@ const mobileProjectsDropdownOpen = ref(false);
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $size-mobile) {
   .project-view {
     display: flex;
     flex-direction: column;
@@ -140,7 +140,7 @@ const mobileProjectsDropdownOpen = ref(false);
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $size-mobile) {
   .project-view {
     display: grid;
     grid-template-columns: 1fr 3fr;

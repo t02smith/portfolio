@@ -11,7 +11,7 @@
             :src="currentPage.logo_link"
             alt=""
           />
-          <strong>{{ currentPage.text }}</strong>
+          <b>{{ currentPage.text }}</b>
         </div>
         <div class="toggle">
           <div :class="`triangle ${optionsOpen && 'active'}`"></div>
@@ -30,7 +30,7 @@
           :src="p.logo_link"
           alt=""
         />
-        <strong>{{ p.text }}</strong>
+        <b>{{ p.text }}</b>
       </NuxtLink>
     </div>
   </div>
@@ -82,7 +82,7 @@ watch(currentPage, () => (optionsOpen.value = false));
     align-items: center;
     justify-content: flex-start;
     gap: 0.6rem;
-    min-width: 120px;
+    min-width: 103px;
 
     > img {
       height: 25px;
@@ -138,7 +138,7 @@ watch(currentPage, () => (optionsOpen.value = false));
     background-color: lighten($bg-primary, 5%);
     padding: 7px 15px;
     color: darken(white, 20%);
-    width: 110px;
+    width: 103px;
     transition: 150ms;
 
     &:hover {

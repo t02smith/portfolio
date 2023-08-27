@@ -19,14 +19,14 @@ p {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $size-mobile) {
   p {
     margin-top: 1.3rem;
     font-size: 1.15rem;
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $size-mobile) {
   p {
     margin-top: 11rem;
     font-size: 1.8rem;

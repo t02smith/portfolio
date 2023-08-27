@@ -44,3 +44,7 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: lighten(#131313, 12%);
 }
+
+strong {
+  color: $txt-secondary;
+}

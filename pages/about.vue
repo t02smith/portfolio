@@ -326,7 +326,7 @@ const watchlist = [
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $size-mobile) {
   .about {
     flex-direction: column;
     overflow-x: hidden;
@@ -388,7 +388,7 @@ const watchlist = [
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: $size-mobile) {
   .about {
     display: flex;
 
