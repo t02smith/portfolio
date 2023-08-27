@@ -50,18 +50,16 @@ const searchResult = ref<any>([]);
 const recommendedPosts = ref<any>([]);
 
 onMounted(async () => {
-  const { data } = await useAsyncData("blog", () =>
-    queryContent("/blog")
-      .where({
-        recommended: { $eq: true },
-      })
-      .only(["_path", "title", "description", "recommended"])
-      .limit(4)
-      .find(),
-  );
+  const posts = await queryContent("/blog")
+    .where({
+      recommended: { $eq: true },
+    })
+    .only(["_path", "title", "description", "recommended"])
+    .limit(4)
+    .find();
 
-  recommendedPosts.value = data.value;
-  searchResult.value = data.value;
+  recommendedPosts.value = posts;
+  searchResult.value = posts;
 });
 
 watch(search, async () => {

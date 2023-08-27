@@ -6,7 +6,7 @@ logo: /icons/projects/this-site.png
 
 # This Website
 
-> [https://github.com/t02smith/t02smith.github.io](https://github.com/t02smith/t02smith.github.io)
+> [https://github.com/t02smith/portfolio](https://github.com/t02smith/portfolio)
 
 This repository shows the source code for the website you are looking at right now! This is currently being hosted by **GitHub Pages** for _free_.
 

@@ -82,7 +82,7 @@ watch(currentPage, () => (optionsOpen.value = false));
     align-items: center;
     justify-content: flex-start;
     gap: 0.6rem;
-    min-width: 103px;
+    min-width: 110px;
 
     > img {
       height: 25px;
@@ -138,7 +138,7 @@ watch(currentPage, () => (optionsOpen.value = false));
     background-color: lighten($bg-primary, 5%);
     padding: 7px 15px;
     color: darken(white, 20%);
-    width: 103px;
+    width: 110px;
     transition: 150ms;
 
     &:hover {

@@ -1,7 +1,12 @@
 <template>
   <nav>
     <NuxtLink to="/"> <strong> Tom </strong>Smith</NuxtLink>
-    <div class="draft">draft</div>
+    <div
+      v-if="props.draft"
+      class="draft"
+    >
+      draft
+    </div>
     <NavDropdown />
   </nav>
 </template>
@@ -27,7 +32,9 @@ strong {
   background-color: red;
   color: black;
   font-weight: bold;
-  padding: 5px 15px;
+  padding: 5px 5px;
   border-radius: 5px;
+  font-size: small;
+
 }
 </style>

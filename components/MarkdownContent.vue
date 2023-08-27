@@ -13,17 +13,18 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  flex: 1;
   padding-bottom: 2.5rem;
 }
 
 .md-content {
-  max-width: 1000px;
-  background-color: lighten($bg-primary, 3%);
   padding-top: 1rem;
-  padding: 1rem;
   height: 100%;
-  flex: 1;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
   h3 {
     margin-bottom: 0.4rem;
@@ -33,8 +34,12 @@
     margin: 10px 0;
   }
 
-  li {
-    margin-left: 1.2rem;
+  ul {
+    margin-left: 2rem;
+  }
+
+  ol {
+    margin-left: 2.9rem;
   }
 
   blockquote {
@@ -55,13 +60,40 @@
   }
 
   .image img {
-    width: 60%;
-    background-color: darken(white, 7%);
+    background-color: white;
     margin: 1rem 0;
   }
 
   strong {
     color: orangered;
+  }
+
+  pre {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: $size-mobile) {
+  .md-content {
+    max-width: 100%;
+
+    > * {
+      padding: 0.5rem;
+    }
+
+    .image img {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $size-mobile) {
+  .md-content {
+    max-width: 1000px;
+
+    .image img {
+      width: 60%;
+    }
   }
 }
 </style>
