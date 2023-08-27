@@ -57,7 +57,7 @@ const { copy, copied, text } = useClipboard();
   margin-top: 1rem;
   margin-bottom: 1rem;
   overflow-y: hidden;
-
+  overflow-x: hidden;
   border-radius: 5px;
 
   > header {

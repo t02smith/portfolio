@@ -2,8 +2,14 @@
   <nav>
     <NuxtLink to="/"> <strong> Tom </strong>Smith</NuxtLink>
     <div
-      v-if="props.draft"
-      class="draft"
+      class="warning dev"
+      v-if="dev"
+    >
+      dev
+    </div>
+    <div
+      v-else-if="props.draft"
+      class="warning draft"
     >
       draft
     </div>
@@ -19,6 +25,8 @@ const props = withDefaults(
     draft: false,
   },
 );
+
+const dev = process.env.NODE_ENV === "development";
 </script>
 <style scoped lang="scss">
 @use "~/assets/style/components/nav.scss" as *;
@@ -28,13 +36,19 @@ strong {
   color: $txt-secondary;
 }
 
-.draft {
-  background-color: red;
+.warning {
   color: black;
   font-weight: bold;
   padding: 5px 5px;
   border-radius: 5px;
   font-size: small;
 
+  &.draft {
+    background-color: yellow;
+  }
+
+  &.dev {
+    background-color: rgb(0, 138, 218);
+  }
 }
 </style>

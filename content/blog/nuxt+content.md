@@ -5,8 +5,6 @@ draft: false
 recommended: true
 ---
 
-# Why You Should Use Nuxt Content
-
 Let's start with some very simple questions. Do you:
 
 - want to write your content in a user-friendly language like Markdown?
@@ -93,7 +91,6 @@ I can follow instructions!!
 ```
 
 ## ✈️ Writing Queries
-
 
 ```typescript{}[@/pages/blog/index.vue]
 const posts = await queryContent("/blog")

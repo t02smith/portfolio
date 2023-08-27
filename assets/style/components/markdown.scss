@@ -1,0 +1,101 @@
+@use "../util/index" as *;
+
+.md-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding-bottom: 2.5rem;
+}
+
+.md-content {
+  padding-top: 1rem;
+  height: 100%;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    margin: 10px 0;
+  }
+
+  ul {
+    margin-left: 2rem;
+  }
+
+  ol {
+    margin-left: 2.9rem;
+  }
+
+  blockquote {
+    background-color: lighten($bg-primary, 15%);
+    padding: 0.5rem;
+    font-weight: bold;
+    border-left: solid 5px $txt-secondary;
+    margin: 5px 0;
+  }
+
+  a {
+    color: $txt-secondary;
+  }
+
+  p,
+  li {
+    color: darken(white, 15%);
+  }
+
+  .image img {
+    background-color: white;
+    margin: 1rem 0;
+  }
+
+  strong {
+    color: orangered;
+  }
+
+  pre {
+    padding: 1rem;
+  }
+
+  :not(pre) > code {
+    background-color: lighten($bg-primary, 5%);
+    padding: 0 3px;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: $size-mobile) {
+  .md-content {
+    max-width: 100%;
+
+    > * {
+      padding: 0.5rem;
+    }
+
+    .image img {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $size-mobile) {
+  .md-content {
+    max-width: 1000px;
+
+    .image img {
+      width: 60%;
+    }
+  }
+}

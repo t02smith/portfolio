@@ -3,9 +3,12 @@
     :to="props.path"
     class="blog-post-card"
   >
-    <h4 :class="props.recommended ? 'recommended' : ''">
-      {{ props.recommended ? "⭐" : "" }}{{ props.title }}
-    </h4>
+    <div class="title">
+      <h4>{{ props.title }}</h4>
+      <BadgeRecommended v-if="props.recommended" />
+      <BadgeDraft v-if="props.draft" />
+    </div>
+
     <p>{{ props.description }}</p>
   </NuxtLink>
 </template>
@@ -16,9 +19,11 @@ const props = withDefaults(
     title: string;
     description: string;
     recommended?: boolean;
+    draft?: boolean;
   }>(),
   {
     recommended: false,
+    draft: false,
   },
 );
 </script>
@@ -30,17 +35,19 @@ const props = withDefaults(
   transition: 150ms;
   padding: 5px 10px;
 
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
   &:hover {
     text-decoration: none;
     background-color: lighten($bg-primary, 5%);
     border-radius: 6px;
 
-    > h4 {
+    h4 {
       color: $txt-secondary;
-
-      &.recommended {
-        color: yellow;
-      }
     }
 
     > p {

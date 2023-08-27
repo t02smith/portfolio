@@ -35,6 +35,7 @@
           :title="post.title"
           :description="post.description"
           :recommended="post.recommended"
+          :draft="post.draft"
         />
       </div>
     </div>
@@ -49,21 +50,24 @@ const search = ref("");
 const searchResult = ref<any>([]);
 const recommendedPosts = ref<any>([]);
 
+const dev = process.env.NODE_ENV === "development";
+
 onMounted(async () => {
   const posts = await queryContent("/blog")
     .where({
-      recommended: { $eq: true },
+      $and: [{ recommended: { $eq: true } }, { draft: { $in: [false, dev] } }],
     })
-    .only(["_path", "title", "description", "recommended"])
+    .only(["_path", "title", "description", "recommended", "draft"])
     .limit(4)
     .find();
 
+  console.log(posts);
   recommendedPosts.value = posts;
   searchResult.value = posts;
 });
 
 watch(search, async () => {
-  if (search.value.length <= 3) {
+  if (search.value.length < 3) {
     searchResult.value = recommendedPosts.value;
     return;
   }
@@ -71,15 +75,22 @@ watch(search, async () => {
   const { data } = await useAsyncData("blog", () =>
     queryContent("/blog")
       .where({
-        $or: [
-          { title: { $icontains: search.value } },
-          { description: { $icontains: search.value } },
+        $and: [
+          {
+            $or: [
+              { title: { $icontains: search.value } },
+              { description: { $icontains: search.value } },
+            ],
+          },
+          {
+            draft: { $in: [false, dev] },
+          },
         ],
       })
       .sort({
         recommended: -1,
       })
-      .only(["_path", "title", "description", "recommended"])
+      .only(["_path", "title", "description", "recommended", "draft"])
       .limit(4)
       .find(),
   );
