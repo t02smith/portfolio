@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <NavBar />
+    <NavBar :draft="true" />
 
     <div class="page-content">
       <slot />
