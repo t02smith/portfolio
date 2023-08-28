@@ -1,0 +1,148 @@
+<template>
+  <div class="tools">
+    <BadgeTech
+      v-for="c in components"
+      :name="c.name"
+      :icon="c.icon"
+      :backgroundColour="c.backgroundColour && c.backgroundColour"
+      :link="c.link && c.link"
+      :textColour="c.textColour && c.textColour"
+    />
+  </div>
+</template>
+<script setup lang="ts">
+type Tool = {
+  name: string;
+  backgroundColour?: string;
+  icon: string;
+  link?: string;
+  textColour?: string;
+};
+
+const toolToComponent: { [key: string]: Tool } = {
+  vue: {
+    name: "Vue.js",
+    icon: "logos:vue",
+    textColour: "#41B883",
+    link: "https://vuejs.org/",
+  },
+  typescript: {
+    name: "TypeScript",
+    icon: "devicon:typescript",
+    textColour: "#3178C6",
+    link: "https://www.typescriptlang.org/",
+  },
+  solidity: {
+    name: "Solidity",
+    icon: "vscode-icons:file-type-solidity",
+    textColour: "eggshell-white",
+    link: "https://soliditylang.org/",
+  },
+  sass: {
+    name: "Sass",
+    icon: "logos:sass",
+    textColour: "#CF649A",
+    link: "https://sass-lang.com/",
+  },
+  python: {
+    name: "Python",
+    icon: "logos:python",
+    textColour: "#3776AB",
+    link: "https://www.python.org/",
+  },
+  nuxt: {
+    name: "Nuxt",
+    icon: "logos:nuxt-icon",
+    textColour: "#42b883",
+    link: "https://nuxt.com/",
+  },
+  javascript: {
+    name: "JavaScript",
+    icon: "logos:javascript",
+    textColour: "#FCDC00",
+    link: "https://www.javascript.com/",
+  },
+  ipfs: {
+    name: "IPFS",
+    icon: "simple-icons:ipfs",
+    textColour: "#51B5E0",
+    link: "https://www.ipfs.com/",
+  },
+  go: {
+    name: "Golang",
+    icon: "logos:go",
+    textColour: "#00ADD8",
+    link: "https://go.dev/",
+  },
+  ethereum: {
+    name: "Ethereum",
+    icon: "mdi:ethereum",
+    textColour: "eggshell-white",
+    link: "https://ethereum.org/",
+  },
+  azure: {
+    name: "Azure",
+    icon: "logos:microsoft-azure",
+    textColour: "#1E85DC",
+    link: "https://azure.microsoft.com/",
+  },
+  bootstrap: {
+    name: "Bootstrap",
+    icon: "logos:bootstrap",
+    textColour: "#702BF7",
+    link: "https://getbootstrap.com/",
+  },
+  fastapi: {
+    name: "FastAPI",
+    icon: "devicon:fastapi",
+    textColour: "#049688",
+    link: "https://fastapi.tiangolo.com/",
+  },
+  pinia: {
+    name: "Pinia",
+    icon: "logos:pinia",
+    textColour: "#FFE46B",
+    link: "https://pinia.vuejs.org/",
+  },
+  raspberryPi: {
+    name: "Raspberry Pi",
+    icon: "devicon:raspberrypi",
+    textColour: "#C51850",
+    link: "https://www.raspberrypi.com/",
+  },
+  burpSuite: {
+    name: "Burp Suite",
+    icon: "fluent-emoji-flat:orange-circle",
+    textColour: "#FF6633",
+    link: "https://portswigger.net/burp",
+  },
+  php: {
+    name: "PHP",
+    icon: "logos:php",
+    textColour: "#6181B6",
+    link: "https://www.php.net/",
+  },
+  cosmosdb: {
+    name: "Cosmos DB",
+    icon: "devicon:cosmosdb",
+    textColour: "#B6DEEC",
+    link: "https://azure.microsoft.com/products/cosmos-db/",
+  },
+};
+
+const props = defineProps<{
+  tools: string[];
+}>();
+
+const components = computed(() =>
+  props.tools.filter((t) => toolToComponent[t]).map((t) => toolToComponent[t]),
+);
+</script>
+<style scoped lang="scss">
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+</style>

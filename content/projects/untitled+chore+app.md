@@ -2,11 +2,39 @@
 title: Untitled Chore App
 overview: A weekly chore manager that generates timetables and ranks users by their contributions.
 logo: /icons/projects/uca.png
+authors:
+  [
+    { name: "Tom Smith", role: "Full-Stack Dev", link: "/" },
+    {
+      name: "Tom Cutts",
+      role: "Frontend Dev",
+      link: "https://github.com/Spratt93",
+    },
+    {
+      name: "Dean Davey",
+      role: "Backend Dev",
+      link: "https://github.com/Davey-Dean",
+    },
+    {
+      name: "Jaret Wrintmore",
+      role: "Backend Dev",
+      link: "https://github.com/W8up",
+    },
+  ]
+link: https://github.com/t02smith/untitled-chore-app
+tools:
+  [
+    "vue",
+    "python",
+    "fastapi",
+    "pinia",
+    "javascript",
+    "bootstrap",
+    "azure",
+    "sass",
+    "cosmosdb",
+  ]
 ---
-
-# Untitled Chore App
-
-> [https://github.com/t02smith/untitled-chore-app](https://github.com/t02smith/untitled-chore-app)
 
 Have you ever:
 
@@ -17,25 +45,9 @@ Have you ever:
 
 It's a common problem at home for a lot of people; especially students. \*_Untitled Chore App_ provides automated chore timetabling for each home you find yourself a part of that is refreshed weekly and allows you track which of your housemates aren't pulling their weight.
 
-## 🛠️ Tools Used
-
-![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)
-![FastAPI Badge](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=fff&style=for-the-badge)
-![Microsoft Azure Badge](https://img.shields.io/badge/Microsoft%20Azure-0078D4?logo=microsoftazure&logoColor=fff&style=for-the-badge)
-![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge)
-![Vue.js Badge](https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=fff&style=for-the-badge)
-![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=for-the-badge)
-
-## 🎓 Authors
-
-This project was part of the **Cloud Application Development** module at the **University of Southampton** and was a group project by:
-
-- Myself
-- Tom Cutts [https://github.com/Spratt93](https://github.com/Spratt93)
-- Dean Davey [https://github.com/Davey-Dean](https://github.com/Davey-Dean)
-- Jaret Wrintmore [https://github.com/W8up](https://github.com/W8up)
-
 ## 🏠 Architecture
+
+Untitled Chore App uses a client-server architecture where the user will interact with a Vue.js website, which makes HTTP requests to our FastAPI server that is deployed to Azure. This API will then interact with our instance of CosmosDB.
 
 <div class="image">
 

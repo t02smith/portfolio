@@ -1,30 +1,29 @@
 ---
-title: This Website
+title: My Little Corner of the Internet
+shortTitle: This Website
 overview: Learn some more about the site you're looking at right now!
 logo: /icons/projects/this-site.png
+link: https://github.com/t02smith/portfolio
+authors: [{ name: "Tom Smith", link: "/", role: "Full-Stack Dev" }]
+tools: ["nuxt", "vue", "sass", "typescript", "azure"]
 ---
 
-# This Website
+This repository shows the source code for the website you are looking at right now! This is currently being hosted as an **Azure Web App**.
 
-> [https://github.com/t02smith/portfolio](https://github.com/t02smith/portfolio)
+I chose [Nuxt v3](https://nuxt.com/) for this project for may reasons, including:
 
-This repository shows the source code for the website you are looking at right now! This is currently being hosted by **GitHub Pages** for _free_.
+- [Vue.js](https://vuejs.org/) is one of the nicest frameworks to work with
+- [Nuxt Content](https://content.nuxtjs.org/) makes it really easy to add and update the content on this site
+- Quality of life features such as no imports, `pages/` directory routing, SSR, ...
+- TypeScript support
 
-TypeScript was an obvious choice as static typing was very sorely missed during my time spent on [Untitled Chore App](/projects?Untitled+Chore+App) and allows me to easily understand this code when I return after months of leaving this code abandoned. SCSS makes writing CSS more concise and the support for mixins and placeholders allow me to reduce the amount of styling I need to write ([CSS nesting does look pretty nice though 👀](https://developer.chrome.com/articles/css-nesting/)).
+This page was initially created using React but I felt that Nuxt offered too many nice features and QoL changes. Moreover, the state management library [🍍 Pinia](https://pinia.vuejs.org/) is excellent and a million _million_ times better than Redux is.
 
 ## 📖 Pages
 
-This website uses [react-router-dom](https://reactrouter.com/en/main) to display different content for different endpoints. Namely:
+This website presently has the following pages:
 
-- _[/](/)_ The home page
-- _[/projects?project={}](/#/projects)_ Showing off some of my projects
-- _[/about](/#/about)_ Some information about myself
-- _[/blog](/#/blog)_ Some blogs written by myself **TODO**
-
-## 🛠️ Tools
-
-![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge)
-![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=for-the-badge)
-![Sass Badge](https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=for-the-badge)
-![Vite Badge](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff&style=for-the-badge)
-![GitHub Pages Badge](https://img.shields.io/badge/GitHub%20Pages-222?logo=githubpages&logoColor=fff&style=for-the-badge)
+- _[/](/)_ The home page with the neat animation ([_that was stolen from here_](https://www.youtube.com/watch?v=vJNVramny9k))
+- _[/projects?project={}](/projects)_ The page you're on right now! This is a collection of interesting projects I've worked on that I feel proud enough about them to share with you.
+- _[/about](/about)_ Some more information about myself that isn't entirely code related, including some photos of me and the people in my life.
+- _[/blog](/blog)_ (**In Draft**) A page for me to post blogs to to share my wisdom or thoughts with the world through this dark and dingey corner of the internet.

@@ -9,7 +9,7 @@
               () => (mobileProjectsDropdownOpen = !mobileProjectsDropdownOpen)
             "
             v-if="current"
-            :title="current.title"
+            :title="current.shortTitle ? current.shortTitle : current.title"
             :overview="current.overview"
             :logo="current.logo"
             :path="current._path"
@@ -29,7 +29,7 @@
             v-if="data"
             v-for="project in data"
             :path="project._path"
-            :title="project.title"
+            :title="project.shortTitle ? project.shortTitle : project.title"
             :overview="project.overview"
             :logo="project.logo"
             :current="route.path === project._path"
@@ -39,13 +39,60 @@
     </div>
 
     <div class="project-content">
-      <MarkdownContent />
+      <div class="md-page">
+        <div class="md-content">
+          <div
+            class="title"
+            v-if="current"
+          >
+            <div class="row">
+              <h1>{{ current.title }}</h1>
+              <BadgeGithubLink
+                v-if="current.link"
+                :link="current.link"
+              />
+              <BadgeNoGithubLink v-else />
+            </div>
+            <hr />
+            <BadgeTechList
+              :tools="current.tools"
+              v-if="current.tools"
+            />
+            <hr />
+            <div
+              class="authors-wrapper"
+              v-if="current.authors"
+            >
+              <p>Completed by</p>
+              <BadgeAuthor
+                v-for="author in current.authors"
+                :name="author.name"
+                :link="author.link"
+                :role="author.role"
+              />
+            </div>
+            <hr />
+          </div>
+          <ContentDoc />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 const { data } = await useAsyncData("projects", () =>
-  queryContent("/projects").only(["title", "overview", "logo", "_path"]).find(),
+  queryContent("/projects")
+    .only([
+      "title",
+      "shortTitle",
+      "overview",
+      "logo",
+      "_path",
+      "authors",
+      "link",
+      "tools",
+    ])
+    .find(),
 );
 
 const route = useRoute();
@@ -56,6 +103,9 @@ const current = computed(() =>
 
 const mobileProjectsDropdownOpen = ref(false);
 </script>
+<style lang="scss">
+@use "~/assets/style/components/markdown.scss" as *;
+</style>
 <style lang="scss" scoped>
 @use "~/assets/style/util/index" as *;
 
@@ -88,6 +138,25 @@ const mobileProjectsDropdownOpen = ref(false);
       }
     }
   }
+}
+
+.authors-wrapper {
+  display: flex;
+  gap: 10px;
+
+  align-items: center;
+  flex-wrap: wrap;
+
+  > p {
+    align-self: flex-start;
+    font-style: italic;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @media (max-width: $size-mobile) {
@@ -138,6 +207,28 @@ const mobileProjectsDropdownOpen = ref(false);
       }
     }
   }
+
+  .title {
+    hr {
+      border-color: gray;
+    }
+
+    > *:last-child {
+      margin-bottom: 0rem;
+    }
+
+    > .row {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  .authors-wrapper {
+    > p {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: $size-mobile) {
@@ -147,6 +238,24 @@ const mobileProjectsDropdownOpen = ref(false);
 
     .options-wrapper {
       margin: 1rem;
+    }
+  }
+
+  .title {
+    > hr {
+      display: none;
+    }
+
+    .authors-wrapper {
+      margin-bottom: 1rem;
+    }
+
+    > .row {
+      display: flex;
+
+      > *:last-child {
+        margin-left: auto;
+      }
     }
   }
 }

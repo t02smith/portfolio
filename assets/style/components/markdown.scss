@@ -68,12 +68,6 @@
     background-color: lighten($bg-primary, 5%);
     padding: 0 3px;
   }
-
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-  }
 }
 
 @media (max-width: $size-mobile) {

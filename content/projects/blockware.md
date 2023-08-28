@@ -1,12 +1,13 @@
 ---
-title: BlockWare
+title: Using Blockchain For Video Game Distribution
+shortTitle: BlockWare
 overview: A blockchain-based distributed market for buying and selling video games.
 logo: /icons/projects/blockware.png
+link: https://github.com/t02smith/blockware
+authors: [{ name: "Tom Smith", link: "/", role: "Full-Stack Dev" }]
+tools:
+  ["vue", "go", "javascript", "sass", "latex", "solidity", "ethereum", "ipfs"]
 ---
-
-# Using Blockchain for Video Game Distribution
-
-> [https://github.com/t02smith/blockware](https://github.com/t02smith/blockware)
 
 Millions of worldwide users enjoy video games, which are large pieces of software that require complex platforms to distribute them. This results in them being generally provided by multinational corporations.
 However, this approach often results in these platforms:
@@ -61,18 +62,3 @@ An Ethereum smart contract was written and deployed to Sepolia [(take a look her
 - storing a list of all games uploaded to the network
 - storing a record of which users have purchased which games
 - storing metadata about each of the games that help to identify it
-
-## 🛠️ Tools used
-
-<div class="tools">
-
-![Go Badge](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=fff&style=for-the-badge)
-![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge)
-![Vue.js Badge](https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=fff&style=for-the-badge)
-![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
-![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white)
-![Solidity Badge](https://img.shields.io/badge/Solidity-363636?logo=solidity&logoColor=fff&style=for-the-badge)
-![Ethereum Badge](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=fff&style=for-the-badge)
-![IPFS Badge](https://img.shields.io/badge/IPFS-65C2CB?logo=ipfs&logoColor=fff&style=for-the-badge)
-
-</div>
