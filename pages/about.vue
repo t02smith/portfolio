@@ -79,18 +79,27 @@
           </div>
 
           <div class="section bitweave">
-            <div class="section-title">
-              <em>(Graduate) Software Engineer</em>
-              <strong>Bitweave</strong>
+            <h5>💾 (Graduate) Software Engineer</h5>
+            <div class="subtitle">
+              <h6>Bitweave</h6>
+              <p>July 2023 - present</p>
             </div>
-            <p>Starting this role soon...</p>
+            <p>
+              Sadly I can't actually talk about anything I do at this job so
+              just close your eyes and imagine some really interesting story
+              about all the exciting dev work the great people at Bitweave have
+              been allocating their (hopefully) favourite Graduate Software
+              Engineer.
+            </p>
           </div>
 
           <div class="section uos">
-            <div class="section-title">
-              <em>BSc Computer Science</em>
-              <strong>University of Southampton</strong>
+            <h5>🎓 BSc Computer Science</h5>
+            <div class="subtitle">
+              <h6>University of Southampton</h6>
+              <p>Sept 2020 - July 2023</p>
             </div>
+
             <p>
               I finished university achieving a First (at 75%) and learnt a hell
               of a lot on the way. Below I'll talk about some of the more
@@ -98,28 +107,28 @@
             </p>
 
             <div>
-              <b>My Third Year</b><br />
+              <b>🥉 My Third Year</b><br />
               <p>
                 The bulk of my third year was spent on my project,
                 <b>Using Blockchain for Video Game Distribution</b> (<a
-                  href="/#/projects?project=Blockware"
+                  href="/projects?project=Blockware"
                   >click here</a
                 >), but I did some other things that are worth mentioning too:
               </p>
 
               <ul>
-                <li>Cloud Application development</li>
+                <li>☁️ Cloud Application development</li>
                 <p>
                   How cloud services like Azure and Google Cloud can be used to
                   host just about anything. During this module I helped create a
                   full-stack website called <b>Unitled Chore App</b> (<a
-                    href="/#/projects?project=Untitled+Chore+App"
+                    href="/projects?project=Untitled+Chore+App"
                     >click here</a
                   >) and created a version of <b>Quiplash</b> based off of the
                   Jackbox game.
                 </p>
 
-                <li>Advanced Databases</li>
+                <li>📦 Advanced Databases</li>
                 <p>
                   How do DBMS' work and how can they work at a large-scale over
                   the internet and the globe? This module took a deep dive into
@@ -129,19 +138,19 @@
                   algorithm that would use a heuristic to optimise SQL queries.
                 </p>
 
-                <li>Advanced Networks</li>
+                <li>🚦 Advanced Networks</li>
                 <p>
                   What protocols should I use for my network and how should
                   devices be arranged? This module had me researching various
                   protocols that each target different use-cases and looking at
                   how they work and how they compare to similar technologies. As
                   part of this module I created <b>Wol-Kit</b> (<a
-                    href="/#/projects?project=wol-kit"
+                    href="/projects?project=wolkit"
                     >click here</a
                   >).
                 </p>
 
-                <li>Web and Cloud Security</li>
+                <li>🔒 Web and Cloud Security</li>
                 <p>
                   How can I secure my website and how can I test that it is
                   secure? This module looked at various ways security can be
@@ -149,9 +158,50 @@
                   vulnerabilities and methods on how to methodically find them.
                   During this module I worked on <b>RobPress</b> and
                   <b>Rob the Bank</b> (<a
-                    href="/#/projects?project=RobPress+and+RobBank"
+                    href="/projects?project=RobPress+and+RobBank"
                     >click here</a
                   >).
+                </p>
+              </ul>
+            </div>
+
+            <div>
+              <b>🥈 My Second Year</b>
+              <p>
+                My second year was less exciting but there were still some gems
+                in there that are worth mentioning:
+              </p>
+              <ul>
+                <li>🌍 Distributed Systems & Networks</li>
+                <p>
+                  This module had me learning about how global networks of
+                  computers can communicate to maintain state by considering
+                  CAPs theorem and the desired properties of the network. The
+                  coursework had me creating a distributed storage system that
+                  provide redundancy for data by storing replicas across
+                  multiple nodes. If nodes failed then replicas would be
+                  distributed to ensure sufficient copies of data existed in the
+                  network.
+                </p>
+                <li>🧠 Intelligent Systems</li>
+                <p>
+                  This module was all about traditional AIs and how they used
+                  various heuristics to find optimal solutions to problems. One
+                  topic of interest from this was genetic algorithms which
+                  absolutely fascinated me; Check out
+                  <a href="https://github.com/t02smith/Knapsack-Solver"
+                    >this repository</a
+                  >
+                  for a genetic algorithm I created that would solve the
+                  Knapsack Problem for me.
+                </p>
+                <li>🚀 Agile Group Project</li>
+                <p>
+                  This group project had me as part of a team of 6 using agile
+                  principles to create an application according to our client's
+                  requirements. Through consistent client meetings and ability
+                  to coordinate and delegate work to my teammates we were able
+                  to produce a useful application that was built iteratively.
                 </p>
               </ul>
             </div>
@@ -178,16 +228,9 @@ const games = [
   "skyrim.jpg",
   "bo3.jpg",
   "gta-v.jpg",
-  "pokemon.jpg",
 ];
 
-const watchlist = [
-  "got.jpg",
-  "peep-show.jpg",
-  "rick-morty.jpg",
-  "bb.jpg",
-  "office.jpg",
-];
+const watchlist = ["got.jpg", "peep-show.jpg", "bb.jpg", "office.jpg"];
 </script>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
@@ -199,9 +242,10 @@ const watchlist = [
 
   .gallery {
     display: flex;
+    flex: 1;
+    height: 100%;
     flex-direction: column;
     gap: 0rem;
-    background-color: lighten($bg-primary, 2%);
 
     .initial,
     .copy {
@@ -277,24 +321,52 @@ const watchlist = [
       > .section {
         display: flex;
         flex-direction: column;
+        box-shadow: $shadow;
+        border-radius: 0 0 5px 5px;
 
         > * {
           padding: 10px;
         }
 
-        &.uos > .section-title {
-          background-color: #045889;
+        &.uos {
+          $uos-bg: #045889;
+
+          > h5 {
+            background-color: $uos-bg;
+          }
+
+          > .subtitle {
+            background-color: lighten($uos-bg, 10%);
+          }
         }
 
-        &.bitweave > .section-title {
-          background-color: rgb(28, 66, 66);
+        &.bitweave {
+          $bitweave-bg: rgb(28, 66, 66);
+
+          > h5 {
+            background-color: $bitweave-bg;
+          }
+
+          > .subtitle {
+            background-color: lighten($bitweave-bg, 10%);
+          }
         }
 
-        > .section-title {
+        > h5 {
           display: flex;
           border-radius: 5px 5px 0 0;
+        }
 
-          > strong {
+        > .subtitle {
+          padding: 4px 10px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          > p {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: darken(white, 10%);
             margin-left: auto;
           }
         }
@@ -302,6 +374,10 @@ const watchlist = [
         > p,
         div {
           background-color: lighten($bg-primary, 3%);
+        }
+
+        > *:last-child {
+          border-radius: 0 0 5px 5px;
         }
 
         a,
