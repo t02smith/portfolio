@@ -5,12 +5,21 @@
   >
     <div class="title">
       <h4>{{ props.title }}</h4>
-      <BadgeRecommended v-if="props.recommended" />
-      <BadgeDraft v-if="props.draft" />
+      <div class="badges">
+        <Badge
+          v-if="props.recommended"
+          name="recommended"
+        />
+        <Badge
+          v-if="props.draft"
+          name="draft"
+        />
+      </div>
     </div>
 
     <p>{{ props.description }}</p>
   </NuxtLink>
+  <hr />
 </template>
 <script setup lang="ts">
 const props = withDefaults(
@@ -34,11 +43,22 @@ const props = withDefaults(
   color: $txt-primary;
   transition: 150ms;
   padding: 5px 10px;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
 
   .title {
     display: flex;
-    align-items: center;
     gap: 8px;
+
+    .badges {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.2rem;
   }
 
   &:hover {
@@ -57,6 +77,31 @@ const props = withDefaults(
 
   > p {
     color: darken($txt-primary, 25%);
+  }
+}
+
+@media (max-width: $size-mobile) {
+  .title {
+    flex-direction: column;
+
+    > .badges {
+      flex-direction: row;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (min-width: $size-mobile) {
+  .title {
+    flex-direction: row;
+
+    > .badges {
+      margin-left: auto;
+    }
+  }
+
+  hr {
+    display: none;
   }
 }
 </style>

@@ -9,7 +9,6 @@
 }
 
 .md-content {
-  padding-top: 1rem;
   height: 100%;
   width: 100%;
 
@@ -52,9 +51,10 @@
     color: darken(white, 15%);
   }
 
-  .image img {
+  img {
     background-color: white;
-    margin: 1rem 0;
+    margin: 1rm 0;
+    width: 100%;
   }
 
   strong {
@@ -78,19 +78,12 @@
     > * {
       padding: 0.5rem;
     }
-
-    img {
-      width: 100%;
-    }
   }
 }
 
 @media (min-width: $size-mobile) {
   .md-content {
     max-width: 1000px;
-
-    .image img {
-      width: 60%;
-    }
+    padding-top: 1rem;
   }
 }

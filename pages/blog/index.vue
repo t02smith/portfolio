@@ -3,7 +3,19 @@
     <div class="blog-home">
       <header>
         <h1>🚀<strong>Welcome</strong> to my blog!</h1>
-        <p>This page will be used for me to share my thoughts</p>
+        <p>
+          This page will contain a selection of posts written by myself that
+          could be anything from tech reviews, to programming tutorials, or
+          general think-pieces. My aim is to write interesting posts that
+          reflect the things that I'm working on or doing with my life.
+        </p>
+        <br />
+        <p>
+          If you have anything you want me to write about or any corrections
+          then shoot me a message through one of my socials.
+        </p>
+        <br />
+        <p>Enjoy! 😄</p>
       </header>
 
       <div class="search">
@@ -29,10 +41,6 @@
   </div>
 </template>
 <script setup lang="ts">
-definePageMeta({
-  layout: "draft",
-});
-
 useHead({
   title: "Tom Smith | Blog",
 });

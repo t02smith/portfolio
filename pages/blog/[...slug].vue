@@ -22,10 +22,6 @@
   </div>
 </template>
 <script setup lang="ts">
-definePageMeta({
-  layout: "draft",
-});
-
 const metadata = ref<any>(null);
 const route = useRoute();
 
