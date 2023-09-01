@@ -17,7 +17,7 @@
         :authors="metadata.authors"
         authorPrefix="Written by"
       />
-      <ContentDoc />
+      <ContentDoc v-if="metadata" />
     </div>
   </div>
 </template>

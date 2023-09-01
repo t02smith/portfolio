@@ -53,6 +53,10 @@ definePageMeta({
   layout: "draft",
 });
 
+useHead({
+  title: "Tom Smith | About Me",
+});
+
 const images = [
   "cat.jpg",
   "cheerleader.jpg",

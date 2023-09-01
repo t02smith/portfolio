@@ -2,21 +2,8 @@
   <div class="blog-home-wrapper">
     <div class="blog-home">
       <header>
-        <h1><strong>Welcome</strong> to my blog!</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora amet
-          repellendus suscipit dolorem velit. Inventore laboriosam voluptatem,
-          quasi libero aspernatur provident vero accusantium sit minima,
-          perspiciatis, obcaecati asperiores. Quia placeat, cum quod amet
-          provident voluptatibus accusamus! Libero similique ullam quasi
-          reiciendis dicta earum eligendi dolor ipsum. Perferendis fugit quae
-          suscipit, enim voluptate quo accusamus nihil provident at, dolorum,
-          corporis vel tenetur! Minima tempore magni nisi ipsum facilis cum
-          quisquam, expedita minus quod dolores iusto laboriosam magnam nihil
-          obcaecati? Blanditiis quas animi deserunt pariatur libero minima.
-          Officiis explicabo est fugiat. Sapiente, ut. Non vero, magni doloribus
-          aliquid odit alias perferendis aperiam?
-        </p>
+        <h1>🚀<strong>Welcome</strong> to my blog!</h1>
+        <p>This page will be used for me to share my thoughts</p>
       </header>
 
       <div class="search">
@@ -44,6 +31,10 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "draft",
+});
+
+useHead({
+  title: "Tom Smith | Blog",
 });
 
 const search = ref("");
@@ -113,9 +104,6 @@ watch(search, async () => {
   gap: 1rem;
 
   > header {
-    > h1 {
-    }
-
     > p {
       color: darken(white, 20%);
     }

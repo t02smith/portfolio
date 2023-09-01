@@ -64,6 +64,10 @@ definePageMeta({
   layout: "nonav",
 });
 
+useHead({
+  title: "Tom Smith",
+});
+
 const pointer = ref(0);
 const codeOutput = computed(() => codeSteps[pointer.value]);
 
