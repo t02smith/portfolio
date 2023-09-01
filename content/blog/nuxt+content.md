@@ -79,7 +79,7 @@ We're going to be adding a home page which we'll use a bit later on in [🔎 Sea
 
 6. Create a slug file to render your content
 
-```vue{}[@/pages/\[...slug\].vue]
+```vue{}[@/pages/[...slug].vue]
 <template>
   <ContentDoc />
 </template>

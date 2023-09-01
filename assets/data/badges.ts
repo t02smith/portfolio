@@ -134,6 +134,16 @@ const badges: { [key: string]: Tool } = {
     textColour: "white",
     link: "https://www.google.com/maps/place/Basingstoke",
   },
+  html: {
+    name: "HTML",
+    icon: "vscode-icons:file-type-html",
+    textColour: "#E44F26",
+  },
+  css: {
+    name: "CSS",
+    icon: "vscode-icons:file-type-css",
+    textColour: "#1572B6",
+  },
 };
 
 export default badges;
