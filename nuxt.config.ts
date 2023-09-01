@@ -8,4 +8,9 @@ export default defineNuxtConfig({
       preload: ["ts"],
     },
   },
+  nitro: {
+    prerender: {
+      routes: ["/sitemap.xml"],
+    },
+  },
 });
