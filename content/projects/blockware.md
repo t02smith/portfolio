@@ -6,7 +6,7 @@ logo: /icons/projects/blockware.png
 link: https://github.com/t02smith/blockware
 authors: [{ name: "Tom Smith", link: "/", role: "Full-Stack Dev" }]
 tools:
-  ["vue", "go", "javascript", "sass", "latex", "solidity", "ethereum", "ipfs"]
+  ["vue", "go", "javascript", "sass", "pinia", "solidity", "ethereum", "ipfs"]
 ---
 
 Millions of worldwide users enjoy video games, which are large pieces of software that require complex platforms to distribute them. This results in them being generally provided by multinational corporations.

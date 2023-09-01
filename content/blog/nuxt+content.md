@@ -1,7 +1,7 @@
 ---
 title: Why You Should Use Nuxt Content
 description: How using Nuxt Content can allow you to easily add and edit the content shown on your page using Markdown.
-draft: false
+draft: true
 recommended: true
 ---
 

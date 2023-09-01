@@ -1,0 +1,44 @@
+<template>
+  <a
+    v-if="badge"
+    :href="badge.link"
+    class="badge"
+    :style="`background-color: ${
+      badge.backgroundColour ? badge.backgroundColour : '#202020'
+    }`"
+  >
+    <Icon
+      :name="badge.icon"
+      size="1.5em"
+      :color="badge.iconFill"
+    />
+    <p :style="`color: ${badge.textColour}`">{{ badge.name }}</p>
+  </a>
+</template>
+<script setup lang="ts">
+import badges from "~/assets/data/badges";
+
+const badge = ref();
+onMounted(() => (badge.value = badges[props.name]));
+
+const props = defineProps<{
+  name: string;
+}>();
+</script>
+<style scoped lang="scss">
+@use "~/assets/style/util/index" as *;
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 7px;
+  font-weight: bold;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 7px;
+  height: fit-content;
+  box-shadow: $shadow;
+}
+</style>

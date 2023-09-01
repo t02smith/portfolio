@@ -54,8 +54,8 @@
               <BadgeNoGithubLink v-else />
             </div>
             <hr />
-            <BadgeTechList
-              :tools="current.tools"
+            <BadgeList
+              :badges="current.tools"
               v-if="current.tools"
             />
             <hr />
@@ -209,10 +209,6 @@ const mobileProjectsDropdownOpen = ref(false);
   }
 
   .title {
-    hr {
-      border-color: gray;
-    }
-
     > *:last-child {
       margin-bottom: 0rem;
     }

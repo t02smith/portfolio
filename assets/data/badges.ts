@@ -1,25 +1,13 @@
-<template>
-  <div class="tools">
-    <BadgeTech
-      v-for="c in components"
-      :name="c.name"
-      :icon="c.icon"
-      :backgroundColour="c.backgroundColour && c.backgroundColour"
-      :link="c.link && c.link"
-      :textColour="c.textColour && c.textColour"
-    />
-  </div>
-</template>
-<script setup lang="ts">
 type Tool = {
   name: string;
   backgroundColour?: string;
   icon: string;
   link?: string;
   textColour?: string;
+  iconFill?: string;
 };
 
-const toolToComponent: { [key: string]: Tool } = {
+const badges: { [key: string]: Tool } = {
   vue: {
     name: "Vue.js",
     icon: "logos:vue",
@@ -128,21 +116,24 @@ const toolToComponent: { [key: string]: Tool } = {
     textColour: "#B6DEEC",
     link: "https://azure.microsoft.com/products/cosmos-db/",
   },
+  recommended: {
+    name: "Recommended",
+    icon: "tabler:star-filled",
+    textColour: "yellow",
+    iconFill: "yellow",
+  },
+  draft: {
+    name: "Draft",
+    icon: "fxemoji:warningsign",
+    textColour: "#ffb02e",
+  },
+  location: {
+    name: "Basingstoke",
+    icon: "ion:location-sharp",
+    iconFill: "green",
+    textColour: "white",
+    link: "https://www.google.com/maps/place/Basingstoke",
+  },
 };
 
-const props = defineProps<{
-  tools: string[];
-}>();
-
-const components = computed(() =>
-  props.tools.filter((t) => toolToComponent[t]).map((t) => toolToComponent[t]),
-);
-</script>
-<style scoped lang="scss">
-.tools {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-</style>
+export default badges;

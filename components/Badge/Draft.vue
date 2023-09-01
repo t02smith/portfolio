@@ -1,5 +1,5 @@
 <template>
-  <p class="draft">⚠️Draft</p>
+  <p class="draft">⚠️ Draft</p>
 </template>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;

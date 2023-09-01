@@ -10,19 +10,13 @@
 
   <div class="md-page">
     <div class="md-content">
-      <div
+      <ContentHeader
         v-if="metadata"
-        class="blog-post-title"
-      >
-        <h1>{{ metadata.title }}</h1>
-        <div class="title-small">
-          <BadgeRecommended v-if="metadata.recommended" />
-          <p v-if="metadata.recommended">•</p>
-          <BadgeDraft v-if="metadata.draft" />
-          <p v-if="metadata.draft">•</p>
-          <p class="author">Written by Tom Smith</p>
-        </div>
-      </div>
+        :badges="badges"
+        :title="metadata.title"
+        :authors="metadata.authors"
+        authorPrefix="Written by"
+      />
       <ContentDoc />
     </div>
   </div>
@@ -37,8 +31,17 @@ const route = useRoute();
 
 onMounted(async () => {
   metadata.value = await queryContent(route.path)
-    .only(["recommended", "title", "draft"])
+    .only(["recommended", "title", "draft", "authors", "badges"])
     .findOne();
+});
+
+const badges = computed(() => {
+  if (!metadata.value) return [];
+
+  let badgeList = [...metadata.value.badges];
+  if (metadata.value.draft) badgeList.unshift("draft");
+  if (metadata.value.recommended) badgeList.unshift("recommended");
+  return badgeList;
 });
 
 onMounted(() => {});
@@ -59,7 +62,6 @@ onMounted(() => {});
 
   header {
     display: flex;
-    align-items: center;
   }
 
   .navigation {
@@ -68,24 +70,6 @@ onMounted(() => {});
     > a {
       color: $txt-secondary;
     }
-  }
-
-  .recommend {
-    color: yellow;
-    font-weight: bold;
-    margin-left: auto;
-  }
-}
-
-.blog-post-title {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-
-  > .title-small {
-    display: flex;
-    align-items: center;
-    gap: 3px;
   }
 }
 
@@ -98,20 +82,11 @@ onMounted(() => {});
 }
 
 @media (max-width: $size-mobile) {
-  .header-wrapper {
-    flex-direction: column;
-  }
-
   header {
     max-width: 100%;
     padding: 0 0.5rem;
     flex-direction: column;
     gap: 5px;
-
-    .recommend {
-      margin-left: none;
-      margin-right: auto;
-    }
   }
 }
 </style>
