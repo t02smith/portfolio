@@ -11,6 +11,8 @@
       :name="badge.icon"
       size="1.5em"
       :color="badge.iconFill"
+      :style="`color: ${badge.iconFill}`"
+      class="icon"
     />
     <p :style="`color: ${badge.textColour}`">{{ badge.name }}</p>
   </a>
@@ -40,5 +42,11 @@ const props = defineProps<{
   border-radius: 7px;
   height: fit-content;
   box-shadow: $shadow;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover > p {
+    text-decoration: underline;
+  }
 }
 </style>

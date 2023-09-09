@@ -1,7 +1,7 @@
 ---
 title: My Little Corner of the Internet
 shortTitle: This Website
-overview: Learn some more about the site you're looking at right now!
+description: Learn some more about the site you're looking at right now!
 logo: /icons/projects/this-site.png
 link: https://github.com/t02smith/portfolio
 authors: [{ name: "Tom Smith", link: "/", role: "Full-Stack Dev" }]

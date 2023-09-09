@@ -13,4 +13,7 @@ export default defineNuxtConfig({
       routes: ["/sitemap.xml"],
     },
   },
+  devtools: {
+    enabled: false,
+  },
 });

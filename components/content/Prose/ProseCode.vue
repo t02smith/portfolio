@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="code-wrapper">
     <header>
       <strong>{{ props.filename }}</strong>
       <p>{{ props.language }}</p>
@@ -46,12 +46,12 @@ const props = defineProps({
   },
 });
 
-const { copy, copied, text } = useClipboard();
+const { copy, copied } = useClipboard();
 </script>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
 
-.wrapper {
+.code-wrapper {
   background-color: darken($bg-primary, 3%);
   position: relative;
   margin-top: 1rem;

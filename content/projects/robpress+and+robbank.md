@@ -1,6 +1,7 @@
 ---
 title: RobPress and RobBank
-overview: How can websites be attacked and how can we defend against it
+shortTitle: RobPress and RobBank
+description: How can websites be attacked and how can we defend against it
 logo: /icons/projects/rob.png
 authors:
   [

@@ -32,27 +32,51 @@
               :fill="social.fill && social.fill"
             />
           </div>
-          <BadgeList
-            class="badges"
-            :badges="['location']"
-          />
           <hr />
-          <p>
-            I'm a <strong>Software Engineer</strong> currently working at
-            <a href="https://bitweave.com">Bitweave </a>as well as a recent
-            graduate from the <strong>University of Southampton</strong> having
-            achieved a 1st class Bachelor's degree in Computer Science.
-          </p>
+        </div>
+        <div class="about-sections">
+          <div class="about-section">
+            <h2>🔍 What I'm Doing Now</h2>
+            <p>
+              In July 2023, I started my job as a
+              <strong>(Junior) Software Engineer</strong> at
+              <a href="https://bitweave.com">Bitweave</a>. Here I've been
+              learning what it really means to work in software engineering and
+              getting hands-on experience with frameworks like
+              <strong>Spring Boot</strong> and infrastructure tools like
+              <strong>Kubernetes</strong> and <strong>Helm</strong>.
+            </p>
+          </div>
+
+          <div class="about-section">
+            <h2>🎓 My Education</h2>
+            <p>
+              Also in July 2023, after three years of pain and suffering, I
+              graduated from the
+              <strong>University of Southampton</strong> with a first class
+              Bachelor's degree in <strong>Computer Science</strong>.
+            </p>
+            <p>
+              The final year of my studies was by far the most interesting and
+              gave me the opportunity to work on several interesting projects,
+              including
+              <NuxtLink to="/projects/blockware">BlockWare</NuxtLink>,
+              <NuxtLink to="/projects/untitled+chore+app"
+                >Untitled Chore App</NuxtLink
+              >, and <NuxtLink to="/projects/wolkit">WolKit</NuxtLink>
+            </p>
+          </div>
+
+          <!-- <div class="about-section">
+            <h2>🎈 My Hobbies</h2>
+            <p></p>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-definePageMeta({
-  layout: "draft",
-});
-
 useHead({
   title: "Tom Smith | About Me",
 });
@@ -142,6 +166,7 @@ const socials: Array<{
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 
     p > a {
       color: $txt-secondary;
@@ -163,105 +188,19 @@ const socials: Array<{
       }
     }
 
-    > .info-sections {
+    .about-sections {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 2rem;
 
-      > .media {
+      .about-section {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        padding: 0.5rem;
+        gap: 1rem;
 
-        > .media-covers {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-
-          > img {
-            height: 100px;
-          }
-        }
-      }
-
-      > .section {
-        display: flex;
-        flex-direction: column;
-        box-shadow: $shadow;
-        border-radius: 0 0 5px 5px;
-
-        > * {
-          padding: 10px;
-        }
-
-        &.uos {
-          $uos-bg: #045889;
-
-          > h5 {
-            background-color: $uos-bg;
-          }
-
-          > .subtitle {
-            background-color: lighten($uos-bg, 10%);
-          }
-        }
-
-        &.bitweave {
-          $bitweave-bg: rgb(28, 66, 66);
-
-          > h5 {
-            background-color: $bitweave-bg;
-          }
-
-          > .subtitle {
-            background-color: lighten($bitweave-bg, 10%);
-          }
-        }
-
-        > h5 {
-          display: flex;
-          border-radius: 5px 5px 0 0;
-        }
-
-        > .subtitle {
-          padding: 4px 10px;
-          display: flex;
-          align-items: center;
-          gap: 15px;
-
-          > p {
-            font-size: 0.75rem;
-            font-style: italic;
-            color: darken(white, 10%);
-            margin-left: auto;
-          }
-        }
-
-        > p,
-        div {
-          background-color: lighten($bg-primary, 3%);
-        }
-
-        > *:last-child {
-          border-radius: 0 0 5px 5px;
-        }
-
-        a,
-        b {
-          color: $txt-secondary;
-        }
-
-        ul {
-          > li {
-            margin-top: 5px;
-            margin-left: 1.5rem;
-          }
-
-          > p {
-            margin-left: 1.5rem;
-            font-style: italic;
-            color: darken(white, 15%);
-          }
+        p {
+          color: darken(white, 20%);
         }
       }
     }
@@ -313,6 +252,12 @@ const socials: Array<{
         font-size: 0.8rem;
       }
     }
+
+    .about-sections {
+      .about-section {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -360,6 +305,12 @@ const socials: Array<{
 
       p {
         font-size: 1.25rem;
+      }
+    }
+
+    .about-sections {
+      .about-section {
+        width: 45%;
       }
     }
   }

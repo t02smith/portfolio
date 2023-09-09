@@ -9,14 +9,14 @@
     />
     <div class="text">
       <h4>{{ props.title }}</h4>
-      <p>{{ props.overview }}</p>
+      <p>{{ props.description }}</p>
     </div>
   </NuxtLink>
 </template>
 <script setup lang="ts">
 const props = defineProps<{
   title: string;
-  overview: string;
+  description: string;
   logo: string;
   path: string;
   current: boolean;

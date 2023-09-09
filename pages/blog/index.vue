@@ -1,8 +1,8 @@
 <template>
-  <div class="blog-home-wrapper">
+  <PageWrapper>
     <div class="blog-home">
       <header>
-        <h1>🚀<strong>Welcome</strong> to my blog!</h1>
+        <h1>🚀 <strong>Welcome</strong> to my blog!</h1>
         <p>
           This page will contain a selection of posts written by myself that
           could be anything from tech reviews, to programming tutorials, or
@@ -38,7 +38,7 @@
         />
       </div>
     </div>
-  </div>
+  </PageWrapper>
 </template>
 <script setup lang="ts">
 useHead({
@@ -100,13 +100,7 @@ watch(search, async () => {
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
 
-.blog-home-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
 .blog-home {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -138,16 +132,5 @@ watch(search, async () => {
       }
     }
   }
-}
-
-@media (min-width: $size-mobile) {
-  .blog-home-wrapper {
-    > .blog-home {
-      max-width: 1000px;
-    }
-  }
-}
-
-@media (max-width: $size-mobile) {
 }
 </style>

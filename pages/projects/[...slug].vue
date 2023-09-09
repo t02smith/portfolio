@@ -1,7 +1,10 @@
 <template>
   <div class="project-view">
     <div class="sidebar-wrapper">
-      <div class="sidebar">
+      <div
+        class="sidebar"
+        v-if="!pending"
+      >
         <div class="selector-wrapper">
           <ProjectOption
             class="options selector"
@@ -10,7 +13,7 @@
             "
             v-if="current"
             :title="current.shortTitle ? current.shortTitle : current.title"
-            :overview="current.overview"
+            :description="current.description"
             :logo="current.logo"
             :path="current._path"
             :current="true"
@@ -27,10 +30,10 @@
               current && current._path === project._path && 'hide'
             }`"
             v-if="data"
-            v-for="project in data"
+            v-for="project in data.filter((p) => p._path !== '/projects')"
             :path="project._path"
             :title="project.shortTitle ? project.shortTitle : project.title"
-            :overview="project.overview"
+            :description="project.description"
             :logo="project.logo"
             :current="route.path === project._path"
           />
@@ -40,7 +43,10 @@
 
     <div class="project-content">
       <div class="md-page">
-        <div class="md-content">
+        <div
+          class="md-content"
+          v-if="current"
+        >
           <div
             class="title"
             v-if="current"
@@ -61,7 +67,7 @@
             <hr />
             <div
               class="authors-wrapper"
-              v-if="current.authors"
+              v-if="current.authors && current.authors.length > 0"
             >
               <p>Completed by</p>
               <BadgeAuthor
@@ -80,12 +86,12 @@
   </div>
 </template>
 <script setup lang="ts">
-const { data } = await useAsyncData("projects", () =>
+const { data, pending } = await useLazyAsyncData("projects", () =>
   queryContent("/projects")
     .only([
       "title",
       "shortTitle",
-      "overview",
+      "description",
       "logo",
       "_path",
       "authors",

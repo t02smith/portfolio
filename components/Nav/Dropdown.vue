@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="dropdown-wrapper">
     <div class="page-select">
       <div
         v-if="currentPage"
@@ -72,7 +72,7 @@ watch(currentPage, () => (optionsOpen.value = false));
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
 
-.wrapper {
+.dropdown-wrapper {
   padding-right: 5px;
   position: relative;
   z-index: 10;

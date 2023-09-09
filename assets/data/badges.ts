@@ -93,7 +93,7 @@ const badges: { [key: string]: Tool } = {
     link: "https://pinia.vuejs.org/",
   },
   raspberryPi: {
-    name: "Raspberry Pi",
+    name: "Pi",
     icon: "devicon:raspberrypi",
     textColour: "#C51850",
     link: "https://www.raspberrypi.com/",
@@ -126,13 +126,6 @@ const badges: { [key: string]: Tool } = {
     name: "Draft",
     icon: "fxemoji:warningsign",
     textColour: "#ffb02e",
-  },
-  location: {
-    name: "Basingstoke",
-    icon: "ion:location-sharp",
-    iconFill: "green",
-    textColour: "white",
-    link: "https://www.google.com/maps/place/Basingstoke",
   },
   html: {
     name: "HTML",
