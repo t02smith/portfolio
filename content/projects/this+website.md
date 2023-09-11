@@ -1,7 +1,7 @@
 ---
 title: My Little Corner of the Internet
 shortTitle: This Website
-description: Learn some more about the site you're looking at right now!
+description: Some more information about the site you're looking at right now, including what tech stack I'm using, and why I'm using it.
 logo: /icons/projects/this-site.png
 link: https://github.com/t02smith/portfolio
 authors: [{ name: "Tom Smith", link: "/", role: "Full-Stack Dev" }]

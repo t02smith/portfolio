@@ -3,7 +3,7 @@ title: Why You Should Use Nuxt Content
 description: How using Nuxt Content can allow you to easily add and edit the content shown on your page using Markdown.
 draft: false
 recommended: true
-badges: ["nuxt", "vue", "javascript", "beginner"]
+badges: ["nuxt", "vue", "javascript"]
 authors: [{ name: "Tom Smith", role: "Nuxt Fanboy", link: "/" }]
 ---
 

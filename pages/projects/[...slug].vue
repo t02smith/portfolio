@@ -1,5 +1,5 @@
 <template>
-  <div class="project-view">
+  <div :class="`project-view ${mobileProjectsDropdownOpen ? 'no-scroll' : ''}`">
     <div class="sidebar-wrapper">
       <div
         class="sidebar"
@@ -13,7 +13,11 @@
             "
             v-if="current"
             :title="current.shortTitle ? current.shortTitle : current.title"
-            :description="current.description"
+            :description="
+              current.description.length > 80
+                ? `${current.description.slice(0, 80)}...`
+                : current.description
+            "
             :logo="current.logo"
             :path="current._path"
             :current="true"
@@ -33,13 +37,23 @@
             v-for="project in data.filter((p) => p._path !== '/projects')"
             :path="project._path"
             :title="project.shortTitle ? project.shortTitle : project.title"
-            :description="project.description"
+            :description="
+              project.description.length > 80
+                ? `${project.description.slice(0, 80)}...`
+                : project.description
+            "
             :logo="project.logo"
             :current="route.path === project._path"
           />
         </div>
       </div>
     </div>
+
+    <div
+      class="overlay"
+      v-if="mobileProjectsDropdownOpen"
+      @click="mobileProjectsDropdownOpen = false"
+    ></div>
 
     <div class="project-content">
       <div class="md-page">
@@ -135,6 +149,7 @@ const mobileProjectsDropdownOpen = ref(false);
     > .sidebar {
       width: 100%;
       max-width: 600px;
+      z-index: 10;
 
       > .options-wrapper,
       > .selector-wrapper {
@@ -166,6 +181,20 @@ const mobileProjectsDropdownOpen = ref(false);
 }
 
 @media (max-width: $size-mobile) {
+  .no-scroll {
+    overflow-y: hidden;
+  }
+
+  .overlay {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: $bg-primary;
+    opacity: 0.5;
+    z-index: 5;
+  }
+
   .project-view {
     display: flex;
     flex-direction: column;
@@ -191,17 +220,11 @@ const mobileProjectsDropdownOpen = ref(false);
       width: 100vw;
       margin: 0;
       transition: 150ms;
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
 
       > * {
         margin: 0 0.75rem;
-
-        &:last-child {
-          margin-bottom: 0.75rem;
-        }
-
-        &:first-child {
-          margin-top: 0.75rem;
-        }
       }
 
       &.mob-menu-open {
@@ -259,6 +282,10 @@ const mobileProjectsDropdownOpen = ref(false);
         margin-left: auto;
       }
     }
+  }
+
+  .overlay {
+    display: none;
   }
 }
 </style>

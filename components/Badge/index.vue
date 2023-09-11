@@ -16,6 +16,10 @@
     />
     <p :style="`color: ${badge.textColour}`">{{ badge.name }}</p>
   </a>
+  <div
+    class="badge loading"
+    v-else
+  ></div>
 </template>
 <script setup lang="ts">
 import badges from "~/assets/data/badges";
@@ -44,6 +48,12 @@ const props = defineProps<{
   box-shadow: $shadow;
   cursor: pointer;
   text-decoration: none;
+
+  &.loading {
+    background-color: #202020;
+    height: 19.2px;
+    width: 40px;
+  }
 
   &:hover > p {
     text-decoration: underline;

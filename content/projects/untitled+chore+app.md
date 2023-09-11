@@ -1,7 +1,7 @@
 ---
 title: Untitled Chore App
 shortTitle: Untitled Chore App
-description: A weekly chore manager that generates timetables and ranks users by their contributions.
+description: A weekly chore manager that will generate chore timetables to users in a household and ranks each user based upon their overall contribution to the household.
 logo: /icons/projects/uca.png
 authors:
   [

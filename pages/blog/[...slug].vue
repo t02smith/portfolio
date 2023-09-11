@@ -1,9 +1,12 @@
 <template>
   <div class="header-wrapper">
     <header>
-      <p class="navigation">
+      <p
+        class="navigation"
+        v-if="metadata"
+      >
         <NuxtLink to="/blog">Blog home</NuxtLink>
-        {{ metadata ? `> ${metadata.title}` : "" }}
+        {{ `> ${metadata.title}` }}
       </p>
     </header>
   </div>
@@ -18,6 +21,7 @@
         authorPrefix="Written by"
       />
       <ContentDoc v-if="metadata" />
+      <p v-else>Loading...</p>
     </div>
   </div>
 </template>
@@ -52,7 +56,6 @@ onMounted(() => {});
   display: flex;
   width: 100%;
   align-self: center;
-  justify-content: center;
   margin-top: 1rem;
   font-size: 0.9rem;
 

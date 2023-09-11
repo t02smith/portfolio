@@ -1,7 +1,7 @@
 ---
 title: Using Blockchain For Video Game Distribution
 shortTitle: BlockWare
-description: A blockchain-based distributed market for buying and selling video games.
+description: A decentralised software marketplace that allows users to buy and sell versioned software using the Ethereum blockchain. Users can then download this software using a built-in P2P file-sharing network.
 logo: /icons/projects/blockware.png
 link: https://github.com/t02smith/blockware
 authors: [{ name: "Tom Smith", link: "/", role: "Full-Stack Dev" }]

@@ -25,17 +25,24 @@
           name=""
           id=""
           placeholder="Enter at least 3 letters"
+          pattern=".{3,}"
           v-model="search"
         />
 
         <BlogPostCard
+          v-if="searchResult && searchResult.length > 0"
           v-for="post in searchResult"
           :path="post._path"
           :title="post.title"
           :description="post.description"
           :recommended="post.recommended"
           :draft="post.draft"
+          :badges="post.badges"
         />
+        <p v-else-if="searchResult && searchResult.length === 0">
+          No results found :(
+        </p>
+        <p v-else>Loading...</p>
       </div>
     </div>
   </PageWrapper>
@@ -46,7 +53,7 @@ useHead({
 });
 
 const search = ref("");
-const searchResult = ref<any>([]);
+const searchResult = ref<any>();
 const recommendedPosts = ref<any>([]);
 
 const dev = process.env.NODE_ENV === "development";
@@ -56,11 +63,10 @@ onMounted(async () => {
     .where({
       $and: [{ recommended: { $eq: true } }, { draft: { $in: [false, dev] } }],
     })
-    .only(["_path", "title", "description", "recommended", "draft"])
+    .only(["_path", "title", "description", "recommended", "draft", "badges"])
     .limit(4)
     .find();
 
-  console.log(posts);
   recommendedPosts.value = posts;
   searchResult.value = posts;
 });
@@ -120,15 +126,18 @@ watch(search, async () => {
     > input {
       font-size: 20px;
       border-radius: 3px;
-      border: solid 1px darken($bg-primary, 3%);
       background-color: lighten($bg-primary, 15%);
       padding: 4px 10px;
       outline: none;
       color: darken(white, 20%);
+      border: solid 1px;
 
-      &:active,
-      &:focus {
-        border-color: $txt-secondary;
+      &:valid {
+        border-color: darken($bg-primary, 3%);
+      }
+
+      &:invalid {
+        border-color: red;
       }
     }
   }

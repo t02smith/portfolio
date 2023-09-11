@@ -1,7 +1,7 @@
 ---
 title: Wake-on-LAN Kit
 shortTitle: WoL-Kit
-description: Waking devices using wake-on-lan using various network and environmental detection methods.
+description: Using the Wake-on-LAN standard to wake various devices using network-based and environmental factors.
 logo: /icons/projects/wolkit.png
 authors: [{ name: "Tom Smith", link: "/", role: "Developer" }]
 link: https://github.com/t02smith/wolkit

@@ -3,18 +3,30 @@
     <div class="gallery">
       <div class="initial">
         <img
+          v-if="imagesReady"
           v-for="i in images"
           :src="`/img/me/${i}`"
           alt=""
         />
+        <div
+          v-else
+          v-for="_ in images.length"
+          class="loading-image"
+        ></div>
       </div>
 
       <div class="copy">
         <img
+          v-if="imagesReady"
           v-for="i in images"
           :src="`/img/me/${i}`"
           alt=""
         />
+        <div
+          v-else
+          v-for="_ in images.length"
+          class="loading-image"
+        ></div>
       </div>
     </div>
 
@@ -77,6 +89,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import { useImage } from "@vueuse/core";
+
 useHead({
   title: "Tom Smith | About Me",
 });
@@ -88,6 +102,13 @@ const images = [
   "poppy.jpg",
   "lucy_grad.jpg",
 ];
+
+const imagesReady = computed(() => {
+  return images.every((i) => {
+    const { isLoading } = useImage({ src: `/img/me/${i}` });
+    return isLoading;
+  });
+});
 
 const socials: Array<{
   backgroundColour: string;
@@ -146,9 +167,14 @@ const socials: Array<{
       gap: 0rem;
     }
 
-    img {
+    img,
+    .loading-image {
       max-width: 350px;
       border-radius: 0.5rem;
+    }
+
+    .loading-image {
+      background-color: #202020;
     }
   }
 
@@ -229,6 +255,12 @@ const socials: Array<{
           max-height: 150px;
           margin: 1.5rem 0.8rem;
         }
+
+        > .loading-image {
+          height: 150px;
+          width: 175px;
+          margin: 1.5rem 0.8rem;
+        }
       }
     }
   }
@@ -273,8 +305,14 @@ const socials: Array<{
         animation: gallery-cycle-desktop 20s infinite linear;
         flex-direction: column;
 
-        > img {
+        > img,
+        .loading-image {
           margin: 0.8rem 1.5rem;
+        }
+
+        .loading-image {
+          height: 350px;
+          width: 350px;
         }
       }
     }

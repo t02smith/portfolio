@@ -1,7 +1,7 @@
 ---
 title: RobPress and RobBank
 shortTitle: RobPress and RobBank
-description: How can websites be attacked and how can we defend against it
+description: In RobPress I aimed to exploit various vulnerabilities in a website for the purpose of stealing information, and gaining control over the system. In RobBank I patched various security vulnerabilities in a website to secure it against an attacker.
 logo: /icons/projects/rob.png
 authors:
   [
