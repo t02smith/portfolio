@@ -1,10 +1,16 @@
 <template>
+  <div
+    class="overlay"
+    v-if="dropdownOpen"
+    @click="dropdownOpen = false"
+  ></div>
+
   <div class="dropdown-wrapper">
     <div class="page-select">
       <div
         v-if="currentPage"
         class="current"
-        @click="() => (optionsOpen = !optionsOpen)"
+        @click="() => (dropdownOpen = !dropdownOpen)"
       >
         <div class="item">
           <img
@@ -14,12 +20,12 @@
           <b>{{ currentPage.text }}</b>
         </div>
         <div class="toggle">
-          <div :class="`triangle ${optionsOpen && 'active'}`"></div>
+          <div :class="`triangle ${dropdownOpen && 'active'}`"></div>
         </div>
       </div>
     </div>
 
-    <div :class="`options ${optionsOpen && 'active'}`">
+    <div :class="`options ${dropdownOpen && 'active'}`">
       <NuxtLink
         @click="() => (currentPage = p)"
         v-for="p in pages.filter((pg) => !route.path.startsWith(pg.link))"
@@ -48,31 +54,33 @@ const pages: Array<PageSelect> = [
   {
     text: "About Me",
     link: "/about",
-    logo_link: "/icons/quick_links/about.svg",
+    logo_link: "/icons/quick_links/about.png",
   },
   {
     text: "Projects",
     link: "/projects",
-    logo_link: "/icons/quick_links/books.svg",
+    logo_link: "/icons/quick_links/books.png",
   },
   {
     text: "Blog",
     link: "/blog",
-    logo_link: "/icons/quick_links/megaphone.svg",
+    logo_link: "/icons/quick_links/megaphone.png",
   },
 ];
 
-const optionsOpen = ref<boolean>(false);
+const dropdownOpen = ref<boolean>(false);
 const currentPage = ref<PageSelect>(
   pages.find((p) => route.path.startsWith(p.link))!,
 );
 
-watch(currentPage, () => (optionsOpen.value = false));
+watch(currentPage, () => (dropdownOpen.value = false));
 </script>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
+@use "~/assets/style/components/overlay" as *;
 
 .dropdown-wrapper {
+  margin-left: auto;
   padding-right: 5px;
   position: relative;
   z-index: 10;
@@ -129,6 +137,7 @@ watch(currentPage, () => (optionsOpen.value = false));
   flex-direction: column;
   align-items: flex-start;
   margin-top: 1rem;
+  box-shadow: $shadow;
 
   &.active {
     transform: translateY(0);

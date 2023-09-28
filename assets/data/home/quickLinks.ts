@@ -8,7 +8,7 @@ const quickLinks: Array<{
   {
     name: "About Me",
     link: "/about",
-    icon_link: "/icons/quick_links/about.svg",
+    icon_link: "/icons/quick_links/about.png",
     draft: false,
     description:
       "Here you will find out more about me. My hopes, my dreams, what I look like and what I actually do with my time.",
@@ -16,7 +16,7 @@ const quickLinks: Array<{
   {
     name: "My Projects",
     link: "/projects",
-    icon_link: "/icons/quick_links/books.svg",
+    icon_link: "/icons/quick_links/books.png",
     draft: false,
     description:
       "Here you will see a collection of projects I've worked on that I've deemed interesting enough to put on display.",
@@ -24,7 +24,7 @@ const quickLinks: Array<{
   {
     name: "Blog",
     link: "/blog",
-    icon_link: "/icons/quick_links/megaphone.svg",
+    icon_link: "/icons/quick_links/megaphone.png",
     draft: false,
     description:
       "For those of you who care what I have to say, this page will contain regular blog posts about things I'm interested in. This includes programming tutorials, tech reviews, and things going on in my life.",

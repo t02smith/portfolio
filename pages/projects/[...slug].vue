@@ -128,6 +128,7 @@ const mobileProjectsDropdownOpen = ref(false);
 </style>
 <style lang="scss" scoped>
 @use "~/assets/style/util/index" as *;
+@use "~/assets/style/components/overlay" as *;
 
 .project-view {
   width: 100%;
@@ -183,16 +184,6 @@ const mobileProjectsDropdownOpen = ref(false);
 @media (max-width: $size-mobile) {
   .no-scroll {
     overflow-y: hidden;
-  }
-
-  .overlay {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-color: $bg-primary;
-    opacity: 0.5;
-    z-index: 5;
   }
 
   .project-view {

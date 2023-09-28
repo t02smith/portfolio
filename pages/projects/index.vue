@@ -83,10 +83,6 @@ const { data, pending } = await useLazyAsyncData("projects", () =>
     text-decoration: none;
 
     &:hover {
-      > img {
-        border-radius: 15%;
-      }
-
       > .project-info {
         h3 {
           text-decoration: underline;
@@ -109,11 +105,10 @@ const { data, pending } = await useLazyAsyncData("projects", () =>
       }
     }
 
-    > img {
+    img {
       max-width: 100px;
       max-height: 100px;
       border-radius: 10%;
-      transition: 150ms;
     }
   }
 }

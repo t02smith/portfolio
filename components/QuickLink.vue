@@ -73,6 +73,7 @@ const props = withDefaults(
 
   img {
     background-color: $bg-primary;
+    object-fit: scale-down;
     z-index: 2;
     transition: 300ms;
   }
