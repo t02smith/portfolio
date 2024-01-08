@@ -65,6 +65,7 @@ onMounted(() => {});
 
   .navigation {
     color: gray;
+    max-width: 1000px;
 
     > a {
       color: $txt-secondary;
@@ -73,9 +74,12 @@ onMounted(() => {});
 }
 
 @media (min-width: $size-mobile) {
+  .header-wrapper {
+    max-width: 1000px;
+  }
+
   header {
     flex-direction: row;
-    max-width: 1000px;
     width: 100%;
   }
 }
