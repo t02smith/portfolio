@@ -3,7 +3,7 @@
     <div class="about">
       <div class="gallery">
         <div class="initial">
-          <NuxtImg
+          <img
             v-if="imagesReady"
             v-for="i in images"
             :src="`/img/me/${i}`"
@@ -17,7 +17,7 @@
         </div>
 
         <div class="copy">
-          <NuxtImg
+          <img
             v-if="imagesReady"
             v-for="i in images"
             :src="`/img/me/${i}`"
