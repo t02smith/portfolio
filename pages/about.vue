@@ -1,92 +1,89 @@
 <template>
-  <div class="about">
-    <div class="gallery">
-      <div class="initial">
-        <img
-          v-if="imagesReady"
-          v-for="i in images"
-          :src="`/img/me/${i}`"
-          alt=""
-        />
-        <div
-          v-else
-          v-for="_ in images.length"
-          class="loading-image"
-        ></div>
-      </div>
-
-      <div class="copy">
-        <img
-          v-if="imagesReady"
-          v-for="i in images"
-          :src="`/img/me/${i}`"
-          alt=""
-        />
-        <div
-          v-else
-          v-for="_ in images.length"
-          class="loading-image"
-        ></div>
-      </div>
-    </div>
-
-    <div class="about-content-wrapper">
-      <div class="about-content">
-        <div class="title">
-          <h1>Hi! I'm Tom 😊</h1>
-          <hr />
-          <div class="social-links">
-            <AboutSocialLink
-              v-for="social in socials"
-              :icon="social.icon"
-              :backgroundColour="social.backgroundColour"
-              :link="social.link"
-              :fill="social.fill && social.fill"
-            />
-          </div>
-          <hr />
+  <ClientOnly>
+    <div class="about">
+      <div class="gallery">
+        <div class="initial">
+          <NuxtImg
+            v-if="imagesReady"
+            v-for="i in images"
+            :src="`/img/me/${i}`"
+            alt=""
+          />
+          <div
+            v-else
+            v-for="_ in images.length"
+            class="loading-image"
+          ></div>
         </div>
-        <div class="about-sections">
-          <div class="about-section">
-            <h2>🔍 What I'm Doing Now</h2>
-            <p>
-              In July 2023, I started my job as a
-              <strong>(Junior) Software Engineer</strong> at
-              <a href="https://bitweave.com">Bitweave</a>. Here I've been
-              learning what it really means to work in software engineering and
-              getting hands-on experience with frameworks like
-              <strong>Spring Boot</strong> and infrastructure tools like
-              <strong>Kubernetes</strong> and <strong>Helm</strong>.
-            </p>
-          </div>
 
-          <div class="about-section">
-            <h2>🎓 My Education</h2>
-            <p>
-              Also in July 2023, after three years of pain and suffering, I
-              graduated from the
-              <strong>University of Southampton</strong> with a first class
-              Bachelor's degree in <strong>Computer Science</strong>.
-            </p>
-            <p>
-              The final year of my studies was by far the most interesting and
-              gave me the opportunity to work on several interesting projects,
-              including
-              <NuxtLink to="/projects/blockware">BlockWare</NuxtLink>,
-              <NuxtLink to="/projects/untitled+chore+app"
-                >Untitled Chore App</NuxtLink
-              >, and <NuxtLink to="/projects/wolkit">WolKit</NuxtLink>
-            </p>
-          </div>
+        <div class="copy">
+          <NuxtImg
+            v-if="imagesReady"
+            v-for="i in images"
+            :src="`/img/me/${i}`"
+            alt=""
+          />
+          <div
+            v-else
+            v-for="_ in images.length"
+            class="loading-image"
+          ></div>
+        </div>
+      </div>
 
-          <!-- <div class="about-section">
-            <h2>🎈 My Hobbies</h2>
-            <p></p>
-          </div> -->
+      <div class="about-content-wrapper">
+        <div class="about-content">
+          <div class="title">
+            <h1>Hi! I'm Tom 😊</h1>
+            <hr />
+            <div class="social-links">
+              <AboutSocialLink
+                v-for="social in socials"
+                :icon="social.icon"
+                :backgroundColour="social.backgroundColour"
+                :link="social.link"
+                :fill="social.fill && social.fill"
+              />
+            </div>
+            <hr />
+          </div>
+          <div class="about-sections">
+            <div class="about-section">
+              <h2>🔍 What I'm Doing Now</h2>
+              <p>
+                In July 2023, I started my job as a
+                <strong>(Junior) Software Engineer</strong> at
+                <a href="https://bitweave.com">Bitweave</a>. Here I've been
+                learning what it really means to work in software engineering
+                and getting hands-on experience with frameworks like
+                <strong>Spring Boot</strong> and infrastructure tools like
+                <strong>Kubernetes</strong> and <strong>Helm</strong>.
+              </p>
+            </div>
+
+            <div class="about-section">
+              <h2>🎓 My Education</h2>
+              <p>
+                Also in July 2023, after three years of pain and suffering, I
+                graduated from the
+                <strong>University of Southampton</strong> with a first class
+                Bachelor's degree in <strong>Computer Science</strong>.
+              </p>
+              <p>
+                The final year of my studies was by far the most interesting and
+                gave me the opportunity to work on several interesting projects,
+                including
+                <NuxtLink to="/projects/blockware">BlockWare</NuxtLink>,
+                <NuxtLink to="/projects/untitled+chore+app"
+                  >Untitled Chore App</NuxtLink
+                >, and <NuxtLink to="/projects/wolkit">WolKit</NuxtLink>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </ClientOnly>
 </template>
 <script setup lang="ts">
 import { useImage } from "@vueuse/core";

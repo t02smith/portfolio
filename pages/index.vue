@@ -1,53 +1,55 @@
 <template>
-  <div class="home">
-    <div class="code">
-      <pre>{{ codeOutput }}</pre>
-    </div>
-    <button
-      @click="skip"
-      class="skip"
-      v-if="pointer < codeSteps.length - 1"
-    >
-      <Icon
-        name="bi:skip-end-fill"
-        color="white"
-        size="1.5em"
-      />skip
-    </button>
-    <div class="home-content">
-      <div class="title">
-        <h1>{{ nameOutput }}</h1>
-        <p :style="captionPointer === 0 ? 'display: none' : ''">
-          {{ captionOutput }}
-        </p>
+  <ClientOnly>
+    <div class="home">
+      <div class="code">
+        <pre>{{ codeOutput }}</pre>
       </div>
-      <div class="quick-links">
-        <div v-for="q in quickLinks">
-          <QuickLink
-            v-if="getQuickLinkStart(q.link) <= pointer"
-            :link="q.link"
-            :icon_link="q.icon_link"
-            :name="
-              q.name.substring(
-                0,
-                Math.min(q.name.length, pointer - getQuickLinkStart(q.link)),
-              )
-            "
-            :draft="
-              q.draft &&
-              pointer >= q.name.length + getQuickLinkStart(q.link) + 1
-            "
-            :description="
-              q.description &&
-              pointer >= q.name.length + getQuickLinkStart(q.link) + 1
-                ? q.description
-                : ''
-            "
-          />
+      <button
+        @click="skip"
+        class="skip"
+        v-if="pointer < codeSteps.length - 1"
+      >
+        <Icon
+          name="bi:skip-end-fill"
+          color="white"
+          size="1.5em"
+        />skip
+      </button>
+      <div class="home-content">
+        <div class="title">
+          <h1>{{ nameOutput }}</h1>
+          <p :style="captionPointer === 0 ? 'display: none' : ''">
+            {{ captionOutput }}
+          </p>
+        </div>
+        <div class="quick-links">
+          <div v-for="q in quickLinks">
+            <QuickLink
+              v-if="getQuickLinkStart(q.link) <= pointer"
+              :link="q.link"
+              :icon_link="q.icon_link"
+              :name="
+                q.name.substring(
+                  0,
+                  Math.min(q.name.length, pointer - getQuickLinkStart(q.link)),
+                )
+              "
+              :draft="
+                q.draft &&
+                pointer >= q.name.length + getQuickLinkStart(q.link) + 1
+              "
+              :description="
+                q.description &&
+                pointer >= q.name.length + getQuickLinkStart(q.link) + 1
+                  ? q.description
+                  : ''
+              "
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </ClientOnly>
 </template>
 <script setup lang="ts">
 import quickLinks from "~/assets/data/home/quickLinks";

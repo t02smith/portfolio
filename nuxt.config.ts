@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@vueuse/motion/nuxt", "@nuxt/content", "nuxt-icon"],
+  modules: ["@vueuse/motion/nuxt", "@nuxt/content", "nuxt-icon", "@nuxt/image"],
   css: ["~/assets/style/app.scss"],
   content: {
     highlight: {
@@ -14,6 +14,6 @@ export default defineNuxtConfig({
     },
   },
   devtools: {
-    enabled: false,
+    enabled: process.env.NODE_ENV === "development",
   },
 });

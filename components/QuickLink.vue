@@ -3,8 +3,10 @@
     :href="props.link"
     :class="`quick-link ${props.draft && 'draft'}`"
   >
-    <img
+    <NuxtImg
+      :placeholder="[75, 50]"
       :src="props.icon_link"
+      loading="lazy"
       alt=""
     />
     <div class="text">

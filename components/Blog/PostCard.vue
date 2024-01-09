@@ -67,6 +67,7 @@ const shownBadges = computed(() => {
 
     h4 {
       color: $txt-secondary;
+      text-decoration: underline;
     }
 
     > p {
