@@ -73,11 +73,6 @@ onMounted(() => {});
   }
 }
 
-.header-wrapper,
-.md-page {
-  margin: 10px;
-}
-
 @media (min-width: $size-mobile) {
   .header-wrapper {
     max-width: 1000px;
