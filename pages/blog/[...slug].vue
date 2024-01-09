@@ -72,10 +72,18 @@ onMounted(() => {});
   }
 }
 
+.header-wrapper,
+.md-page {
+  margin: 10px;
+}
+
 @media (min-width: $size-mobile) {
+  .header-wrapper {
+    max-width: 1000px;
+  }
+
   header {
     flex-direction: row;
-    max-width: 1000px;
     width: 100%;
   }
 }
