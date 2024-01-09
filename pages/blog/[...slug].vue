@@ -65,6 +65,7 @@ onMounted(() => {});
 
   .navigation {
     color: gray;
+    max-width: 1000px;
 
     > a {
       color: $txt-secondary;
