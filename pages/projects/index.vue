@@ -10,11 +10,11 @@
     </header>
     <hr />
     <div
-      v-if="!pending"
+      v-if="projects"
       class="projects-wrapper"
     >
       <NuxtLink
-        v-for="project in data"
+        v-for="project in projects"
         :to="project._path"
         class="project"
       >
@@ -33,11 +33,9 @@
   </PageWrapper>
 </template>
 <script setup lang="ts">
-const { data, pending } = await useLazyAsyncData("projects", () =>
-  queryContent("/projects")
+const projects = await queryContent("/projects")
     .only(["shortTitle", "description", "logo", "_path", "tools"])
-    .find(),
-);
+    .find();
 </script>
 <style lang="scss">
 .projects-wrapper > .project {
