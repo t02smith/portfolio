@@ -33,9 +33,15 @@
   </PageWrapper>
 </template>
 <script setup lang="ts">
-const projects = await queryContent("/projects")
-    .only(["shortTitle", "description", "logo", "_path", "tools"])
-    .find();
+const projects = ref<any>(null);
+
+onMounted(async () => {
+  const projectData = await queryContent("/projects")
+      .only(["shortTitle", "description", "logo", "_path", "tools"])
+      .find();
+
+  projects.value = projectData;      
+});
 </script>
 <style lang="scss">
 .projects-wrapper > .project {
