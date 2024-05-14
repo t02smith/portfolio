@@ -21,6 +21,15 @@
       />
     </div>
     <hr />
+    <div
+      class="draft"
+      v-if="props.draft"
+    >
+      <Icon name="material-symbols:warning-rounded" />
+      <span>
+        This blog post is currently in draft and is subject to change.
+      </span>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -30,6 +39,7 @@ const props = withDefaults(
     title: string;
     authors: Array<Author>;
     authorPrefix?: string;
+    draft: boolean;
 
     // for github link to relevant repo if exists
     // box for no link may be shown
@@ -66,6 +76,20 @@ export type Author = {
       align-self: flex-start;
       font-style: italic;
     }
+  }
+
+  .draft {
+    border-left: solid 6px orange;
+    background-color: rgb(232, 232, 156);
+    opacity: 0.9;
+    font-weight: bold;
+    color: black;
+    padding: 3px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 }
 

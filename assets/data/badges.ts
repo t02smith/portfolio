@@ -137,6 +137,11 @@ const badges: { [key: string]: Tool } = {
     icon: "vscode-icons:file-type-css",
     textColour: "#1572B6",
   },
+  angular: {
+    name: "Angular",
+    icon: "vscode-icons:file-type-angular",
+    textColour: "#DD0031",
+  },
 };
 
 export default badges;

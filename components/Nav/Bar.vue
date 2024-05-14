@@ -1,22 +1,20 @@
 <template>
-  <ClientOnly>
-    <nav>
-      <NuxtLink to="/"> <strong> Tom </strong>Smith</NuxtLink>
-      <div
-        class="warning dev"
-        v-if="dev"
-      >
-        dev
-      </div>
-      <div
-        v-else-if="props.draft"
-        class="warning draft"
-      >
-        draft
-      </div>
-      <NavDropdown />
-    </nav>
-  </ClientOnly>
+  <nav>
+    <NuxtLink to="/"> <strong> Tom </strong>Smith</NuxtLink>
+    <div
+      class="warning dev"
+      v-if="dev"
+    >
+      dev
+    </div>
+    <div
+      v-else-if="props.draft"
+      class="warning draft"
+    >
+      draft
+    </div>
+    <NavDropdown />
+  </nav>
 </template>
 <script setup lang="ts">
 const props = withDefaults(

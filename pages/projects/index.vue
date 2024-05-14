@@ -37,10 +37,10 @@ const projects = ref<any>(null);
 
 onMounted(async () => {
   const projectData = await queryContent("/projects")
-      .only(["shortTitle", "description", "logo", "_path", "tools"])
-      .find();
+    .only(["shortTitle", "description", "logo", "_path", "tools"])
+    .find();
 
-  projects.value = projectData;      
+  projects.value = projectData;
 });
 </script>
 <style lang="scss">

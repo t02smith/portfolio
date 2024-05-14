@@ -10,7 +10,6 @@
       </p>
     </header>
   </div>
-
   <div class="md-page">
     <div class="md-content">
       <ContentHeader
@@ -18,9 +17,12 @@
         :badges="badges"
         :title="metadata.title"
         :authors="metadata.authors"
+        :draft="metadata.draft"
         authorPrefix="Written by"
       />
-      <ContentDoc v-if="metadata" />
+      <ContentDoc v-if="metadata">
+        <template #empty> This page has no content. </template>
+      </ContentDoc>
       <p v-else>Loading...</p>
     </div>
   </div>
