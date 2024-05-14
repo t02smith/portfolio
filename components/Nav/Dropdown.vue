@@ -1,16 +1,13 @@
 <template>
-  <div
-    class="overlay"
-    v-if="dropdownOpen"
-    @click="dropdownOpen = false"
-  ></div>
+  <Overlay @close="dropdownOpen = false" />
 
   <div class="dropdown-wrapper">
     <div class="page-select">
-      <div
+      <button
         v-if="currentPage"
         class="current"
-        @click="() => (dropdownOpen = !dropdownOpen)"
+        @click="dropdownOpen = !dropdownOpen"
+        tabindex="0"
       >
         <div class="item">
           <img
@@ -22,7 +19,7 @@
         <div class="toggle">
           <div :class="`triangle ${dropdownOpen && 'active'}`"></div>
         </div>
-      </div>
+      </button>
     </div>
 
     <div :class="`options ${dropdownOpen && 'active'}`">
@@ -31,6 +28,7 @@
         v-for="p in pages.filter((pg) => !route.path.startsWith(pg.link))"
         :to="p.link"
         class="item"
+        :tabindex="dropdownOpen ? 0 : -1"
       >
         <img
           :src="p.logo_link"
@@ -43,6 +41,7 @@
 </template>
 <script setup lang="ts">
 const route = useRoute();
+const overlay = useOverlay();
 
 type PageSelect = {
   text: string;
@@ -70,10 +69,11 @@ const pages: Array<PageSelect> = [
 
 const dropdownOpen = ref<boolean>(false);
 const currentPage = ref<PageSelect>(
-  pages.find((p) => route.path.startsWith(p.link))!,
+  pages.find((p) => route.path.startsWith(p.link))!
 );
 
 watch(currentPage, () => (dropdownOpen.value = false));
+watch(dropdownOpen, () => overlay.set(dropdownOpen.value));
 </script>
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
@@ -112,6 +112,9 @@ watch(currentPage, () => (dropdownOpen.value = false));
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: white;
 
     > * {
       border-radius: 7px;

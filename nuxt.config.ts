@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@vueuse/motion/nuxt", "@nuxt/content", "nuxt-icon"],
+  modules: ["@vueuse/motion/nuxt", "@nuxt/content", "nuxt-icon", "@pinia/nuxt"],
   css: ["~/assets/style/app.scss"],
   content: {
     highlight: {

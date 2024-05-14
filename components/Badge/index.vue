@@ -1,6 +1,7 @@
 <template>
-  <a
+  <component
     v-if="badge"
+    :is="!!badge.link ? 'a' : 'div'"
     :href="badge.link"
     class="badge"
     :style="`background-color: ${
@@ -15,7 +16,8 @@
       class="icon"
     />
     <p :style="`color: ${badge.textColour}`">{{ badge.name }}</p>
-  </a>
+  </component>
+
   <div
     class="badge loading"
     v-else
@@ -34,6 +36,14 @@ const props = defineProps<{
 <style scoped lang="scss">
 @use "~/assets/style/util/index" as *;
 
+a.badge {
+  cursor: pointer;
+
+  &:hover > p {
+    text-decoration: underline;
+  }
+}
+
 .badge {
   display: flex;
   align-items: center;
@@ -46,17 +56,12 @@ const props = defineProps<{
   border-radius: 7px;
   height: fit-content;
   box-shadow: $shadow;
-  cursor: pointer;
   text-decoration: none;
 
   &.loading {
     background-color: #202020;
     height: 19.2px;
     width: 40px;
-  }
-
-  &:hover > p {
-    text-decoration: underline;
   }
 }
 </style>
