@@ -20,7 +20,7 @@ const props = withDefaults(
   }>(),
   {
     fill: "none",
-  },
+  }
 );
 </script>
 <style scoped lang="scss">
@@ -28,14 +28,14 @@ const props = withDefaults(
 
 .social-link {
   aspect-ratio: 1;
-  height: 75px;
+  height: 62.5px;
   display: grid;
   place-items: center;
   border-radius: 10px;
   box-shadow: $shadow;
   color: white;
   transition: 150ms;
-  font-size: 4em;
+  font-size: 3em;
 
   &:hover {
     opacity: 0.65;

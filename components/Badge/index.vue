@@ -28,7 +28,7 @@ const badge = ref();
 onMounted(() => (badge.value = badges[props.name]));
 
 const props = defineProps<{
-  name: string;
+  name: keyof typeof badges;
 }>();
 </script>
 <style scoped lang="scss">

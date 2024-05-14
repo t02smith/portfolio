@@ -7,7 +7,7 @@ type Tool = {
   iconFill?: string;
 };
 
-const badges: { [key: string]: Tool } = {
+const badges: Record<string, Tool> = {
   vue: {
     name: "Vue.js",
     icon: "logos:vue",
@@ -141,6 +141,31 @@ const badges: { [key: string]: Tool } = {
     name: "Angular",
     icon: "vscode-icons:file-type-angular",
     textColour: "#DD0031",
+  },
+  java: {
+    name: "Java",
+    icon: "devicon:java",
+    textColour: "#ea2d2e",
+  },
+  spring: {
+    name: "Spring",
+    icon: "devicon:spring",
+    textColour: "#77bc1f",
+  },
+  postgres: {
+    name: "PostgreSQL",
+    icon: "logos:postgresql",
+    textColour: "#336791",
+  },
+  k8s: {
+    name: "Kubernetes",
+    icon: "devicon:kubernetes",
+    textColour: "#326ce5",
+  },
+  gitlab: {
+    name: "GitLab",
+    icon: "devicon:gitlab",
+    textColour: "#e24329",
   },
 };
 
