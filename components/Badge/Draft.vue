@@ -2,7 +2,7 @@
   <p class="draft">⚠️ Draft</p>
 </template>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .draft {
   background-color: lighten($bg-primary, 5%);

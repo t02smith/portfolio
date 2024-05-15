@@ -46,7 +46,7 @@ const shownBadges = computed(() => {
 }
 </style>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .blog-post-card {
   color: $txt-primary;

@@ -194,7 +194,7 @@ const socials: Array<{
 ];
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap");
 

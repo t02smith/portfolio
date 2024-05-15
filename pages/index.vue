@@ -123,7 +123,7 @@ function skip() {
 onMounted(async () => {});
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .home {
   overflow: hidden;
@@ -205,8 +205,7 @@ onMounted(async () => {});
     border-radius: 4px;
     box-shadow: $shadow;
     margin-left: 0.25rem;
-    padding: 0.25rem;
-    padding-right: 0.5rem;
+    padding: 0.25rem 0.5rem 0.25rem 0.25rem;
   }
 }
 

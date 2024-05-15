@@ -76,8 +76,8 @@ watch(currentPage, () => (dropdownOpen.value = false));
 watch(dropdownOpen, () => overlay.set(dropdownOpen.value));
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
-@use "~/assets/style/components/overlay" as *;
+@use "@/assets/style/util/index" as *;
+@use "@/assets/style/components/overlay" as *;
 
 .dropdown-wrapper {
   margin-left: auto;

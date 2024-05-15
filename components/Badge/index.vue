@@ -34,7 +34,7 @@ const props = defineProps<{
 }>();
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 a.badge {
   cursor: pointer;

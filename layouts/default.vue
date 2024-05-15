@@ -8,5 +8,5 @@
   </div>
 </template>
 <style scoped lang="scss">
-@import "~/assets/style/page.scss";
+@import "@/assets/style/page.scss";
 </style>

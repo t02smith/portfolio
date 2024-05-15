@@ -4,7 +4,7 @@
   </div>
 </template>
 <style lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .wrapper {
   display: flex;

@@ -16,7 +16,7 @@ const props = defineProps<{
 }>();
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .github-link {
   background-color: #24292e;

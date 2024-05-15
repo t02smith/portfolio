@@ -29,8 +29,8 @@ const props = withDefaults(
 const dev = process.env.NODE_ENV === "development";
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/components/nav.scss" as *;
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/components/nav.scss" as *;
+@use "@/assets/style/util/index" as *;
 
 strong {
   color: $txt-secondary;

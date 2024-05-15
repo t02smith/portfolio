@@ -126,11 +126,11 @@ const current = computed(() =>
 const mobileProjectsDropdownOpen = ref(false);
 </script>
 <style lang="scss">
-@use "~/assets/style/components/markdown.scss" as *;
+@use "@/assets/style/components/markdown.scss" as *;
 </style>
 <style lang="scss" scoped>
-@use "~/assets/style/util/index" as *;
-@use "~/assets/style/components/overlay" as *;
+@use "@/assets/style/util/index" as *;
+@use "@/assets/style/components/overlay" as *;
 
 .project-view {
   width: 100%;
@@ -232,7 +232,7 @@ const mobileProjectsDropdownOpen = ref(false);
 
   .title {
     > *:last-child {
-      margin-bottom: 0rem;
+      margin-bottom: 0;
     }
 
     > .row {

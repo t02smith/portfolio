@@ -36,7 +36,7 @@ const props = withDefaults(
 );
 </script>
 <style lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .quick-link {
   display: flex;

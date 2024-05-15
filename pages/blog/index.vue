@@ -104,7 +104,7 @@ watch(search, async () => {
 });
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .blog-home {
   display: flex;

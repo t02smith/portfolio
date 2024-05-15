@@ -49,7 +49,7 @@ const props = defineProps({
 const { copy, copied } = useClipboard();
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .code-wrapper {
   background-color: darken($bg-primary, 3%);

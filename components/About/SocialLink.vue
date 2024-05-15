@@ -24,7 +24,7 @@ const props = withDefaults(
 );
 </script>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .social-link {
   aspect-ratio: 1;

@@ -55,7 +55,7 @@ onMounted(async () => {
 }
 </style>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .projects-home {
   display: flex;

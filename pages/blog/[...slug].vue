@@ -49,10 +49,10 @@ const badges = computed(() => {
 onMounted(() => {});
 </script>
 <style lang="scss">
-@use "~/assets/style/components/markdown.scss" as *;
+@use "@/assets/style/components/markdown.scss" as *;
 </style>
 <style scoped lang="scss">
-@use "~/assets/style/util/index" as *;
+@use "@/assets/style/util/index" as *;
 
 .header-wrapper {
   display: flex;
