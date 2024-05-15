@@ -3,7 +3,7 @@
     <div class="sidebar-wrapper">
       <div
         class="sidebar"
-        v-if="!pending"
+        v-if="!!data"
       >
         <div class="selector-wrapper">
           <ProjectOption
@@ -100,20 +100,22 @@
   </div>
 </template>
 <script setup lang="ts">
-const { data, pending } = await useLazyAsyncData("projects", () =>
-  queryContent("/projects")
-    .only([
-      "title",
-      "shortTitle",
-      "description",
-      "logo",
-      "_path",
-      "authors",
-      "link",
-      "tools",
-    ])
-    .find(),
-);
+
+const data = ref<any>();
+onMounted(async () => {
+    data.value = await queryContent("/projects")
+      .only([
+        "title",
+        "shortTitle",
+        "description",
+        "logo",
+        "_path",
+        "authors",
+        "link",
+        "tools",
+      ])
+      .find()
+})
 
 const route = useRoute();
 
