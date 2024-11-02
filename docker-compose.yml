@@ -1,9 +1,0 @@
-version: "3.7"
-
-services:
-  portfolio-site:
-    build: .
-    container_name: portfolio-site
-    restart: always
-    ports:
-      - "3030:3000"

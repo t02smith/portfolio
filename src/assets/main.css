@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Fira+Code&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", monospace;
+}
+
+hr {
+  border-color: gray;
+}
+
+body {
+  background-color: #131313;
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Width and height for the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Background color of the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #131313;
+}
+
+/* Color of the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #2d2d2d;
+  border-radius: 5px;
+}
+
+/* On hover, color of the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #323232;
+}
+
+strong {
+  color: rgb(0, 177, 9);
+}
+
+/*# sourceMappingURL=main.css.map */
