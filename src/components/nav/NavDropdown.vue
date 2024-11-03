@@ -4,6 +4,7 @@
   <div class="dropdown-wrapper">
     <div class="page-select">
       <button
+        :class="dropdownOpen ? 'active' : ''"
         v-if="currentPage"
         class="current"
         @click="dropdownOpen = !dropdownOpen"
@@ -82,7 +83,7 @@ watch(dropdownOpen, () => overlay.set(dropdownOpen.value));
 
 .dropdown-wrapper {
   margin-left: auto;
-  padding-right: 5px;
+  padding: 0 5px 0 0;
   position: relative;
   z-index: 10;
 
@@ -117,6 +118,11 @@ watch(dropdownOpen, () => overlay.set(dropdownOpen.value));
     border: none;
     color: white;
 
+    &.active > *{
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
     > * {
       border-radius: 7px;
     }
@@ -140,7 +146,6 @@ watch(dropdownOpen, () => overlay.set(dropdownOpen.value));
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 1rem;
   box-shadow: $shadow;
 
   &.active {

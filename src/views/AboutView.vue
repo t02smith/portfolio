@@ -27,6 +27,7 @@
           <div class="social-links">
             <SocialLink
               v-for="social in socials"
+              :key="social.link"
               :icon="social.icon"
               :backgroundColour="social.backgroundColour"
               :link="social.link"
@@ -213,14 +214,9 @@ const socials: Array<{
       gap: 0;
     }
 
-    img,
-    .loading-image {
+    img {
       max-width: 350px;
       border-radius: 0.5rem;
-    }
-
-    .loading-image {
-      background-color: #202020;
     }
   }
 
@@ -304,12 +300,6 @@ const socials: Array<{
           max-height: 150px;
           margin: 1.5rem 0.8rem;
         }
-
-        > .loading-image {
-          height: 150px;
-          width: 175px;
-          margin: 1.5rem 0.8rem;
-        }
       }
     }
   }
@@ -360,14 +350,8 @@ const socials: Array<{
         animation: gallery-cycle-desktop 20s infinite linear;
         flex-direction: column;
 
-        > img,
-        .loading-image {
+        > img {
           margin: 0.8rem 1.5rem;
-        }
-
-        .loading-image {
-          height: 350px;
-          width: 350px;
         }
       }
     }
